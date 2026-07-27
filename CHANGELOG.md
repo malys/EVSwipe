@@ -4,6 +4,45 @@ All notable changes to **MG4 Swipe Launcher** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
+## [Unreleased] — MG4 app suite alignment
+
+### ⚠️ Breaking — existing users must reinstall once
+- Application id changed from `com.tommasov.mg4swipenovalauncher` to
+  **`com.mg4.launcher.swipe`**, and the app is now signed with the **MG4 suite platform
+  key** (the same key as MG4Control and MG4Tasker). Either change alone forces a fresh
+  install: uninstall the previous version, then install the new one. Settings are reset.
+
+### Added
+- **Two release channels.** `stable` has no self-update path at all — the updater class is
+  not in the APK and the manifest declares no `INTERNET` permission, so a stable build is
+  fully offline by construction. `unstable` is a rolling pre-release published on every
+  push to `master`, with OTA, installed alongside stable as `.unstable`.
+- **OTA updater** for the unstable channel, shared with the rest of the suite: https only,
+  exact-match GitHub host allowlist, and the downloaded APK must be signed with the same
+  certificate as the running app or it is deleted. Both gates fail closed and are
+  unit-tested. Install stays a manual tap — the app does not request
+  `REQUEST_INSTALL_PACKAGES`.
+- **CI/CD**: `tests.yml`, `security.yml`, `unstable.yml`, `release.yml`. A blocking
+  permission-drift gate fails the build on any `uses-permission` not justified in
+  `.github/security/permission-allowlist.txt`; gitleaks is blocking; mobsfscan, semgrep and
+  OWASP Dependency-Check upload informational SARIF.
+- [SECURITY.md](SECURITY.md) with the reporting process and the design decisions behind the
+  accessibility and overlay surfaces.
+- `mise.toml` pinning JDK 17, with build/test/lint/permission tasks.
+
+### Changed
+- **UI rebuilt on the MG4 suite design system**: Material 3 dark on the shared `mg4_*`
+  colour and spacing tokens, with the suite's 64 dp touch target. Dark is now imposed
+  rather than following the system — the screen faces the driver at night. The day/night
+  PNG artwork and `values-night/` are gone.
+- Default swipe target updated to MG4 Simple Launcher's new id, `com.mg4.launcher.simple`.
+
+### Security
+- **Accessibility declaration narrowed to what the code actually uses**:
+  `typeWindowStateChanged` only, with `canRetrieveWindowContent="false"`. It previously
+  declared `typeAllMask` + `canRetrieveWindowContent="true"`. `AccService` never read
+  window content, but the declaration granted the ability to.
+
 ## [1.4.1] - 2026-06-22
 
 ### Changed

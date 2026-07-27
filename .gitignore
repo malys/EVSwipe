@@ -13,3 +13,7 @@ local.properties
 keystore.properties
 *.jks
 *.keystore
+
+# Local mise override (machine-specific) — mise.toml itself is committed.
+mise.local.toml
+.mise.local.toml

@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Narrowed to exactly what AccService uses.
+     Previously this declared accessibilityEventTypes="typeAllMask" and
+     canRetrieveWindowContent="true" — the app never read window content, but the
+     declaration granted the ability to. Accessibility + overlay is the classic Android
+     malware pairing, so the declaration should not claim more than the code needs.
+       - typeWindowStateChanged: the only event AccService handles (it forwards the
+         foreground package name to SwipeService so the "opening" loader can be dismissed).
+       - canRetrieveWindowContent="false": AccService never calls getRootInActiveWindow()
+         or reads node text.
+     The back action uses performGlobalAction(GLOBAL_ACTION_BACK), which needs neither. -->
 <accessibility-service
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityEventTypes="typeWindowStateChanged"
     android:accessibilityFeedbackType="feedbackGeneric"
     android:notificationTimeout="100"
     android:accessibilityFlags="flagDefault"
-    android:canRetrieveWindowContent="true"
+    android:canRetrieveWindowContent="false"
     android:description="@string/accessibility_service_description" />

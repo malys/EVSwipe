@@ -17,4 +17,12 @@
     <string name="package_not_found">App non trovata</string>
     <string name="selected_app">Selezionata: %1$s</string>
     <string name="version_label">v%1$s</string>
+
+    <!-- Aggiornamento OTA — solo canale unstable. Una build stable non ha updater. -->
+    <string name="update_check_action">Cerca aggiornamenti</string>
+    <string name="update_up_to_date">Hai già l\'ultima versione</string>
+    <string name="update_check_failed">Impossibile controllare gli aggiornamenti</string>
+    <string name="update_downloading">Download di unstable %1$s</string>
+    <string name="update_already_downloaded">Aggiornamento già scaricato — aprilo da Download</string>
+    <string name="update_rejected">Aggiornamento rifiutato: firma non valida</string>
 </resources>

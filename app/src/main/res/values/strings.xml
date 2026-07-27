@@ -16,4 +16,12 @@
     <string name="package_not_found">Package not found</string>
     <string name="selected_app">Selected: %1$s</string>
     <string name="version_label">v%1$s</string>
+
+    <!-- OTA updater — unstable channel only. A stable build has no updater at all. -->
+    <string name="update_check_action">Check for updates</string>
+    <string name="update_up_to_date">You\'re on the latest version</string>
+    <string name="update_check_failed">Couldn\'t check for updates</string>
+    <string name="update_downloading">Downloading unstable %1$s</string>
+    <string name="update_already_downloaded">Update already downloaded — open it from Downloads</string>
+    <string name="update_rejected">Update rejected: wrong signature</string>
 </resources>

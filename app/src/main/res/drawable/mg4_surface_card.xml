@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Plain MG4 surface panel, suite corner radius. Groups the settings controls and the
+     app list so they read as panels rather than floating on the background. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/mg4_corner" />
+    <solid android:color="@color/mg4_surface" />
+</shape>
