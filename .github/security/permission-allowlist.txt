@@ -1,0 +1,31 @@
+# Allowed permissions for MG4 Swipe Launcher.
+# Any uses-permission in a manifest NOT listed here FAILS the CI.
+# Why: this app holds an accessibility service and draws over other apps — the classic
+# Android malware pairing. Every new permission widens that surface and must be reviewed
+# here, with the justification written down.
+#
+# One line = one full permission name. '#' = comment.
+
+# --- Overlay ---
+# The invisible swipe strips at the bottom edge and the floating back button are drawn
+# over whatever app is in the foreground. Without this the app has no input surface at all.
+android.permission.SYSTEM_ALERT_WINDOW
+
+# --- Own service ---
+# A foreground service owns the overlay for as long as the head unit is on, and starts at
+# boot so the swipe areas exist without the settings screen being opened first.
+android.permission.FOREGROUND_SERVICE
+android.permission.RECEIVE_BOOT_COMPLETED
+
+# --- Network / OTA — UNSTABLE flavor only ---
+# Declared solely in src/unstable/AndroidManifest.xml. The unstable channel self-updates
+# (checks GitHub pre-releases, https + host allowlist + signature check). The stable APK
+# has neither this permission nor any updater code: it is a fully offline app.
+android.permission.INTERNET
+
+# --- Note on the accessibility service ---
+# BIND_ACCESSIBILITY_SERVICE is not a uses-permission — it is the permission the AccService
+# component *requires of the system*, which is how an accessibility service is declared.
+# The capability it grants is bounded in res/xml/accessibility_service_config.xml:
+# typeWindowStateChanged only, canRetrieveWindowContent="false". Widening either of those
+# is a security change and belongs in a review, not in a drive-by commit.
