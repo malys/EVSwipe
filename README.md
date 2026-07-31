@@ -6,7 +6,7 @@
 
 MG4 Swipe Launcher is an app that enables a **swipe up** action from the bottom edge of the screen to quickly launch a user-selected app. This feature is especially useful for fast and easy access to a specific app of your choice.
 
-It is part of the **MG4 app suite** (MG4Control, MG4Tasker, ABRP Uploader, MG4 Simple Launcher) and shares its dark Material 3 theme, its CI/CD and security gates, and its two-channel release model.
+It is part of the **MG4 app suite** (MG4Control, MG4Tasker, MG4ABRPUploader, MG4 Simple Launcher) and shares its dark Material 3 theme, its CI/CD and security gates, and its two-channel release model.
 
 > 💡 It pairs perfectly with [MG4 Simple Launcher](https://github.com/Tommasov/MG4_Simple_Launcher) — which is now the **default** swipe target. As the home launcher it stays warm in memory, so the swipe re-opens it almost instantly, for a clean, system-integrated home experience.
 
