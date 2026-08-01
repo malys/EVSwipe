@@ -1,60 +1,133 @@
-name: Bug report
-description: The swipe or the overlay misbehaves on the head unit
-labels: ["bug"]
+name: 🐛 Bug Report
+description: Report a bug or issue you've encountered
+title: "[BUG] "
+labels: [bug, needs-review]
+assignees: []
+
 body:
   - type: markdown
     attributes:
       value: |
-        Please do not report security issues here — see
-        [SECURITY.md](https://github.com/malys/MG4_Swipe_Launcher/blob/master/SECURITY.md)
-        for private reporting.
-  - type: textarea
-    id: what
-    attributes:
-      label: What happened
-      description: What the app did, and what you expected instead.
-    validations:
-      required: true
-  - type: input
-    id: version
-    attributes:
-      label: App version
-      description: Shown in the corner of the main screen, or the GitHub release you installed (e.g. v1.4.1).
-    validations:
-      required: true
-  - type: dropdown
-    id: channel
-    attributes:
-      label: Channel
-      options: ["stable", "unstable", "Not sure"]
-    validations:
-      required: true
-  - type: input
-    id: firmware
-    attributes:
-      label: Head unit / firmware
-      description: "MG4 infotainment version, e.g. SWI68. Or the emulator profile, if that is where it happened."
+        # Bug Report
+
+        Thank you for helping improve this project! Please provide as much detail as possible.
+
+        **⚠️ OVERLAY:** If this bug affects swipe gesture detection or overlay responsiveness, it may impact all apps running on the infotainment screen.
+
   - type: checkboxes
-    id: permissions
+    id: checks
     attributes:
-      label: Permissions granted
+      label: "Pre-submission checks"
+      description: "Ensure you've done these before submitting"
       options:
-        - label: Draw over other apps (overlay)
-        - label: Accessibility service enabled
+        - label: I've searched existing issues and found no duplicate
+          required: true
+        - label: I'm using the latest version
+          required: true
+        - label: I've tested this on the actual vehicle (or emulator)
+          required: false
+        - label: This bug affects swipe gesture or overlay rendering
+          required: false
+
   - type: input
-    id: foreground
+    id: title
     attributes:
-      label: Which app was in the foreground?
-      description: The swipe strips sit on top of whatever is on screen — say what that was.
+      label: "Bug Summary"
+      description: "One-line summary of the bug"
+      placeholder: "Swipe strip not responding to gestures on right edge"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: |
+        Detailed description of the bug. Include:
+        - What you expected to happen
+        - What actually happened
+        - Why this is a problem
+      placeholder: |
+        Expected: Right-edge swipe strip responds to all gestures
+        Actual: Swipes from far-right (< 10px) don't register
+        Impact: Users cannot reliably access launcher when swiping from far edge
+      rows: 6
+    validations:
+      required: true
+
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
-      description: Where you swiped from, how far, and what the configured strip size is.
-      render: text
+      label: "Steps to Reproduce"
+      description: "Exact steps to reproduce the bug"
+      placeholder: |
+        1. Enable MG4SwipeLauncher overlay
+        2. Configure right-edge strip
+        3. Swipe from very edge of screen (last 5–10 pixels)
+        4. Observe: gesture not recognized
+      rows: 5
+    validations:
+      required: true
+
   - type: textarea
-    id: logcat
+    id: environment
     attributes:
-      label: Logcat
-      description: "If you can get it: `adb logcat -d | grep -i mg4`. A stack trace is worth ten descriptions."
-      render: text
+      label: "Environment"
+      description: "Device and software details"
+      placeholder: |
+        - Vehicle: MG4 EV
+        - Firmware: SWI133
+        - Android Automotive: v9
+        - App Version: 1.0.0
+        - Display: 12.8\" infotainment
+        - Strip width: 50px
+        - Foreground app: Maps / Media Player
+      rows: 4
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs or Screenshots"
+      description: |
+        Attach:
+        - Screenshot showing the issue
+        - Logcat output (from ADB: `adb logcat | grep -i mg4`)
+        - Any accessibility or overlay errors
+      placeholder: "Paste logcat or description here"
+      rows: 8
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severity"
+      description: "How critical is this bug?"
+      options:
+        - "Critical (overlay unusable / blocks all gestures)"
+        - "High (swipe unreliable / frequently fails)"
+        - "Medium (workaround available / intermittent)"
+        - "Low (cosmetic / very rare)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: overlay_impact
+    attributes:
+      label: "Overlay Impact"
+      description: "Does this affect the swipe strip overlay?"
+      options:
+        - "No — app logic only"
+        - "Yes — overlay rendering affected"
+        - "Yes — gesture detection affected"
+        - "Unknown — unclear"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: "Consent"
+      options:
+        - label: I understand this project is not affiliated with SAIC/MG Motor and carries no warranty (see DISCLAIMER.md)
+          required: true
