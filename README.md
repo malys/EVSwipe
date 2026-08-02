@@ -10,8 +10,19 @@ It is part of the **MG4 app suite** (MG4Control, MG4Tasker, MG4ABRPUploader, MG4
 
 > 💡 It pairs perfectly with [MG4 Simple Launcher](https://github.com/Tommasov/MG4_Simple_Launcher) — which is now the **default** swipe target. As the home launcher it stays warm in memory, so the swipe re-opens it almost instantly, for a clean, system-integrated home experience.
 
-## ⚠️ Upgrading from v1.2 (or earlier) — please read
+## Contents
 
+- [⚠️ Upgrading from v1.2 (or earlier) — please read](#upgrading-from-v12-or-earlier-please-read)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Channels](#channels)
+- [Building](#building)
+- [Project documents](#project-documents)
+- [Security](#security)
+- [Contributing](#contributing)
+- [Legal](#legal)
+
+## ⚠️ Upgrading from v1.2 (or earlier) — please read
 **EN —** The app is now signed with the **MG4 suite platform key**, and its application id
 changed from `com.tommasov.mg4swipenovalauncher` to `com.mg4.launcher.swipe`. Either change
 alone forces a fresh install: **uninstall the previous version first**, then install the new
@@ -36,14 +47,12 @@ disinstallare. (Le impostazioni sono salvate per app, quindi verranno azzerate c
 la reinstallazione.)
 
 ## Features
-
 - **Swipe up from the bottom edge**: Quickly launch your chosen app with a simple swipe-up gesture.
 - **Default target — MG4 Simple Launcher**: out of the box the swipe opens [MG4 Simple Launcher](https://github.com/malys/MG4_Simple_Launcher) (`com.mg4.launcher.simple`). Being the home launcher it stays warm, so it re-opens almost instantly.
 - **Any app works too**: Nova Launcher (or any installed app) can be chosen instead of the default from the MG4 Swipe main screen.
 - **Configuration**: Select the app you want to launch by opening the MG4 Swipe app.
 
-## Settings
-
+## Configuration
 These options are configurable from the MG4 Swipe main screen:
 
 - **Two swipe areas**: the bottom edge is split into a left and a right area. By
@@ -64,7 +73,6 @@ These options are configurable from the MG4 Swipe main screen:
 - **Check for updates**: unstable builds only — a stable build has no updater.
 
 ## Channels
-
 Two build flavors, like the sibling apps:
 
 - **stable** — tagged releases, **no self-update**. The updater class is not in the
@@ -79,17 +87,7 @@ and only if it is signed with the same certificate as the running app — otherw
 deletes the file. Install is still a manual tap: the app does not hold
 `REQUEST_INSTALL_PACKAGES`.
 
-## Security
-
-This app holds an accessibility service and draws over other apps, so its
-declarations are kept as narrow as the code: `typeWindowStateChanged` only, with
-`canRetrieveWindowContent="false"`. `AccService` forwards the foreground package
-name to `SwipeService` and performs the global back action — it never reads window
-content. See [SECURITY.md](SECURITY.md) for the full posture and what is in scope
-for a report.
-
-## Build
-
+## Building
 Standard Android project (Java + Kotlin, AGP 8.6, Gradle 8.7, `minSdk 28` /
 `targetSdk 34`). JDK 17 is required and pinned in `mise.toml`.
 
@@ -160,7 +158,6 @@ Every `uses-permission` must be listed with a justification in
 `.github/security/permission-allowlist.txt`, or the build fails.
 
 ## Project documents
-
 - [SECURITY.md](SECURITY.md) — threat model, the accessibility/overlay posture, how to
   report a vulnerability privately
 - [DISCLAIMER.md](DISCLAIMER.md) — no warranty, no liability, and what running this on a
@@ -170,8 +167,22 @@ Every `uses-permission` must be listed with a justification in
   before reusing anything
 - [AGENTS.md](AGENTS.md) — architecture notes for contributors and coding agents
 
-## Disclaimer (English)
+## Security
+This app holds an accessibility service and draws over other apps, so its
+declarations are kept as narrow as the code: `typeWindowStateChanged` only, with
+`canRetrieveWindowContent="false"`. `AccService` forwards the foreground package
+name to `SwipeService` and performs the global back action — it never reads window
+content. See [SECURITY.md](SECURITY.md) for the full posture and what is in scope
+for a report.
 
+## Contributing
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. In short: this
+code runs in a moving vehicle, so changes stay small, carry tests, and say in the diff
+what would break without them. Anything touching the interface follows
+[DESIGN.md](DESIGN.md).
+
+## Legal
+### Disclaimer (English)
 The full text lives in [DISCLAIMER.md](DISCLAIMER.md). In short:
 
 This project is provided **for study and educational purposes only**. It is an
@@ -189,8 +200,7 @@ driving.
 All graphic resources, trademarks, and brand names belong to their respective
 owners and are used here for study purposes only.
 
-## Avvertenze (Italiano)
-
+### Avvertenze (Italiano)
 Questo progetto è fornito **esclusivamente a scopo di studio ed educativo**. È un
 progetto sperimentale, non commerciale, non affiliato né approvato o supportato da
 SAIC, MG, Nova Launcher o da alcun costruttore di veicoli.
