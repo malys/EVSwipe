@@ -2,15 +2,9 @@
 <!-- Colours specific to MG4 Swipe Launcher. Shared tokens are in colors.xml (generated
      by tools/sync-tokens.mjs - do not add a local colour there).
 
-     Identical in light and dark: these are solid blocks carrying a white label, not
-     theme surfaces. There is no values-night/ counterpart, so Android falls back to
-     these values in both themes. -->
+     There is no values-night/ counterpart, so Android falls back to these values in
+     both themes. -->
 <resources>
-    <!-- Help strips for the swipe areas, on the settings screen. Two distinct hues
-         because the two areas do different things; white on them at 11.0:1 and 7.8:1. -->
-    <color name="mg4_help_back">#FF29357F</color>
-    <color name="mg4_help_open">#FF8A3A12</color>
-
     <!-- Scrim behind the swipe window. -->
     <color name="mg4_scrim">#99000000</color>
 </resources>

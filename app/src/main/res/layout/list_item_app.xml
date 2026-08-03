@@ -8,7 +8,9 @@
     android:gravity="center_vertical"
     android:minHeight="@dimen/touch_target"
     android:orientation="horizontal"
-    android:padding="@dimen/spacing_sm">
+    android:background="@drawable/mg4_list_selector"
+    android:paddingHorizontal="@dimen/spacing_md"
+    android:paddingVertical="@dimen/spacing_sm">
 
     <ImageView
         android:id="@+id/app_icon"
@@ -27,10 +29,10 @@
 
     <ImageView
         android:id="@+id/app_checkmark"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:contentDescription="@null"
-        android:src="@android:drawable/btn_star_big_on"
+        android:layout_width="@dimen/selection_mark_size"
+        android:layout_height="@dimen/selection_mark_size"
+        android:contentDescription="@string/selected_indicator"
+        android:src="@drawable/ic_selected"
         android:visibility="gone"
         app:tint="@color/mg4_accent" />
 </LinearLayout>

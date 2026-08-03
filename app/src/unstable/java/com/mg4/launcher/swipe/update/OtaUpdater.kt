@@ -33,7 +33,7 @@ import java.util.Locale
 object OtaUpdater {
 
     private const val TAG = "OtaUpdater"
-    private const val RELEASES_API = "https://api.github.com/repos/malys/MG4_Swipe_Launcher/releases"
+    private const val RELEASES_API = "https://api.github.com/repos/malys/MG4SwipeLauncher/releases"
     private const val TIMEOUT_MS = 10_000
 
     // Hosts an update may come from. The githubusercontent entries are the CDNs GitHub

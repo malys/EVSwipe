@@ -101,6 +101,7 @@ public class AppListAdapter extends ArrayAdapter<ApplicationInfo> {
         nameView.setText(appInfo.loadLabel(packageManager));
 
         checkmarkView.setVisibility(appInfo.packageName.equals(selectedPackage) ? View.VISIBLE : View.INVISIBLE);
+        convertView.setActivated(appInfo.packageName.equals(selectedPackage));
 
         return convertView;
     }

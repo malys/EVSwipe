@@ -1,8 +1,11 @@
 # AGENTS.md — MG4 Swipe Launcher
 
-Swipe-up-from-the-bottom app launcher for the SAIC MG4 head unit. Part of the MG4 app suite
+Swipe-up-from-the-bottom app launcher for the SAIC MG4 head unit. Part of **MG4Suite**
 alongside [MG4Control](../MG4Control), [MG4Tasker](../MG4Tasker),
 [MG4ABRPUploader](../MG4ABRPUploader) and [MG4 Simple Launcher](../MG4SimpleLauncher).
+
+The workspace `AGENTS.md` and normative workspace `DESIGN.md` apply; this file contains
+only launcher-specific additions.
 
 Fork of [Tommasov/MG4_Swipe_Launcher](https://github.com/Tommasov/MG4_Swipe_Launcher) —
 see [`LICENSE.md`](LICENSE.md), the licence situation is not the usual one.
