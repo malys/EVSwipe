@@ -30,8 +30,8 @@ purposes**.
   no bridge to MG4Control. It cannot read or change a vehicle setting. What it *can* do is
   start an app and consume touches at the edge of the screen the driver looks at.
 - **Compatibility is inferred, not certified.** The panel geometry and Android version
-  targeted here come from reading the MG4 ROM (`SWI68-29958-1300R69`), not from a vendor
-  specification. A firmware update can change the system UI or how overlays and
+  are project compatibility targets, not a vendor specification. A firmware update can
+  change the system UI or how overlays and
   accessibility services are handled.
 - The **stable channel is fully offline** — no `INTERNET` permission, no updater code in
   the APK. The **unstable channel self-updates** from GitHub pre-releases over https, with a
