@@ -82,4 +82,12 @@
         <item name="android:textSize">@dimen/text_secondary</item>
         <item name="android:textColor">@color/mg4_text_secondary</item>
     </style>
+
+    <style name="Text.MG4.SwipeGuide" parent="Text.MG4.Body">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/spacing_lg</item>
+        <item name="android:paddingEnd">@dimen/spacing_lg</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

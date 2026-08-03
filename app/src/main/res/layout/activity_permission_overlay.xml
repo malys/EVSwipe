@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Permission gate, on the MG4 suite dark theme. -->
+<!-- MG4Suite permission gate: capability, reason and next action remain visible together. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,20 +8,48 @@
     android:orientation="vertical"
     android:padding="@dimen/spacing_lg">
 
-    <TextView
-        android:id="@+id/textPermissionExplanation"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="@dimen/permission_content_width"
         android:layout_height="wrap_content"
-        android:text="@string/per_funzionare_correttamente_l_app_ha_bisogno_del_permesso_di_disegnare_sopra_le_altre_app"
-        android:textAlignment="center"
-        android:textAppearance="@style/Text.MG4.Title"
-        android:textSize="@dimen/settings_heading" />
+        android:background="@drawable/mg4_surface_card"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_lg">
 
-    <Button
-        android:id="@+id/buttonGrantOverlayPermission"
-        style="@style/Widget.MG4.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_lg"
-        android:text="@string/concedi_permesso" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_setup_title"
+            android:textAppearance="@style/Text.MG4.Display" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/permission_overlay_label"
+            android:textAppearance="@style/Text.MG4.SectionHeader" />
+
+        <TextView
+            android:id="@+id/textPermissionExplanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="@string/permission_overlay_detail"
+            android:textAppearance="@style/Text.MG4.Body" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/permission_next_step"
+            android:textAppearance="@style/Text.MG4.Secondary" />
+
+        <Button
+            android:id="@+id/buttonGrantOverlayPermission"
+            style="@style/Widget.MG4.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/concedi_permesso" />
+    </LinearLayout>
 </LinearLayout>

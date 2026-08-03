@@ -5,9 +5,10 @@
      The settings screen is a wide landscape form, and the app list is read at a glance,
      so its rows are larger than the suite body size. -->
 <resources>
-    <dimen name="settings_side_margin">200dp</dimen>
-    <dimen name="settings_heading">@dimen/text_display</dimen>
-    <dimen name="app_row_icon">92dp</dimen>
+    <dimen name="settings_rail_width">360dp</dimen>
+    <dimen name="permission_content_width">760dp</dimen>
+    <dimen name="app_row_icon">64dp</dimen>
     <dimen name="app_row_label">26sp</dimen>
-    <dimen name="help_strip_height">40dp</dimen>
+    <dimen name="selection_mark_size">40dp</dimen>
+    <dimen name="help_strip_height">72dp</dimen>
 </resources>

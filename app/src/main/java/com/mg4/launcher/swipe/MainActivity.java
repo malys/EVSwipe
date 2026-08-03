@@ -86,7 +86,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            ApplicationInfo selectedApp = userApps.get(position);
+            ApplicationInfo selectedApp = adapter.getItem(position);
+            if (selectedApp == null) {
+                return;
+            }
             preferencesManager.saveSelectedPackage(selectedApp.packageName);
             adapter.setSelectedPackage(selectedApp.packageName);
             adapter.notifyDataSetChanged();
@@ -146,11 +149,11 @@ public class MainActivity extends AppCompatActivity {
         TextView leftHelp = findViewById(R.id.textView);
         TextView rightHelp = findViewById(R.id.textView2);
         leftHelp.setText(swapped
-                ? R.string.help_swipe_up_here_to_open_selected_app
-                : R.string.help_swipe_up_here_to_go_back_this_simulate_the_physical_back_button);
+                ? R.string.help_swipe_open
+                : R.string.help_swipe_back);
         rightHelp.setText(swapped
-                ? R.string.help_swipe_up_here_to_go_back_this_simulate_the_physical_back_button
-                : R.string.help_swipe_up_here_to_open_selected_app);
+                ? R.string.help_swipe_back
+                : R.string.help_swipe_open);
         leftHelp.setBackgroundResource(swapped ? R.color.mg4_help_open : R.color.mg4_help_back);
         rightHelp.setBackgroundResource(swapped ? R.color.mg4_help_back : R.color.mg4_help_open);
     }
