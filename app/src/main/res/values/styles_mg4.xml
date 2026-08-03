@@ -24,6 +24,7 @@
          away. This is the minimum used everywhere in the suite, including where
          Material offers something much smaller. -->
     <style name="Widget.MG4.Button" parent="Widget.Material3.Button">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MG4.Button</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="android:textSize">@dimen/text_body</item>
         <item name="android:paddingStart">@dimen/spacing_lg</item>
@@ -31,6 +32,7 @@
     </style>
 
     <style name="Widget.MG4.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MG4.Button</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="android:textSize">@dimen/text_body</item>
         <item name="android:paddingStart">@dimen/spacing_lg</item>
@@ -40,6 +42,7 @@
     <!-- Dialog buttons are the smallest thing in any app and the easiest to miss:
          pulled up to the same target as the rest. -->
     <style name="Widget.MG4.DialogButton" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MG4.Button</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="android:minWidth">140dp</item>
         <item name="android:textSize">@dimen/text_body</item>
@@ -87,7 +90,11 @@
         <item name="android:gravity">center</item>
         <item name="android:paddingStart">@dimen/spacing_lg</item>
         <item name="android:paddingEnd">@dimen/spacing_lg</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/mg4_on_accent</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MG4.Button" parent="">
+        <item name="cornerSize">@dimen/mg4_corner</item>
     </style>
 </resources>

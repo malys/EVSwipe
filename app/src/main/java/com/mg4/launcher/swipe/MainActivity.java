@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ListView listView = findViewById(R.id.app_list);
+        listView.setEmptyView(findViewById(R.id.app_list_empty));
         adapter = new AppListAdapter(this, userApps, selectedPackage);
         listView.setAdapter(adapter);
 
@@ -154,8 +156,14 @@ public class MainActivity extends AppCompatActivity {
         rightHelp.setText(swapped
                 ? R.string.help_swipe_back
                 : R.string.help_swipe_open);
-        leftHelp.setBackgroundResource(swapped ? R.color.mg4_help_open : R.color.mg4_help_back);
-        rightHelp.setBackgroundResource(swapped ? R.color.mg4_help_back : R.color.mg4_help_open);
+        applyHelpStyle(leftHelp, swapped);
+        applyHelpStyle(rightHelp, !swapped);
+    }
+
+    private void applyHelpStyle(TextView help, boolean opensApp) {
+        help.setBackgroundResource(opensApp ? R.color.mg4_accent : R.color.mg4_surface_raised);
+        help.setTextColor(ContextCompat.getColor(this,
+                opensApp ? R.color.mg4_on_accent : R.color.mg4_text_primary));
     }
 
     private void stopSwipeService() {

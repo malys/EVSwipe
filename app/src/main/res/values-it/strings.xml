@@ -3,6 +3,7 @@
     <string name="app_name">MG4 Swipe Launcher</string>
     <string name="explanation_text">Destinazione dello swipe</string>
     <string name="app_picker_supporting_text">Scegli l\'app aperta dallo swipe nell\'area in basso a destra.</string>
+    <string name="app_picker_empty">Nessuna app avviabile trovata. Mostra le app di sistema o installa un launcher, poi torna qui.</string>
     <string name="section_swipe_behavior">Comportamento swipe</string>
     <string name="show_system_apps">Mostra le app di sistema</string>
     <string name="hide_system_apps">Nascondi le app di sistema</string>

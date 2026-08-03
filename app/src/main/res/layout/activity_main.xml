@@ -135,6 +135,19 @@
                 android:dividerHeight="@dimen/spacing_sm"
                 android:listSelector="@drawable/mg4_list_selector"
                 android:padding="@dimen/spacing_sm" />
+
+            <TextView
+                android:id="@+id/app_list_empty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:layout_weight="1"
+                android:background="@drawable/mg4_surface_card"
+                android:gravity="center"
+                android:padding="@dimen/spacing_lg"
+                android:text="@string/app_picker_empty"
+                android:textAppearance="@style/Text.MG4.Body"
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
 
@@ -149,7 +162,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/mg4_help_back"
+            android:background="@color/mg4_surface_raised"
             android:text="@string/help_swipe_back" />
 
         <TextView
@@ -158,7 +171,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/mg4_help_open"
+            android:background="@color/mg4_accent"
             android:text="@string/help_swipe_open" />
     </LinearLayout>
 </LinearLayout>
