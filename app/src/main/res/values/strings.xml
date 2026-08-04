@@ -32,4 +32,14 @@
     <string name="update_downloading">Downloading unstable %1$s</string>
     <string name="update_already_downloaded">Update already downloaded — open it from Downloads</string>
     <string name="update_rejected">Update rejected: wrong signature</string>
+    <string name="about_action">About</string>
+    <string name="about_title">About MG4 Swipe Launcher</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_attribution">Maintained by malys\nFork of Tommasov/MG4_Swipe_Launcher</string>
+    <string name="about_repository">github.com/malys/MG4SwipeLauncher</string>
+    <string name="about_made_with_love">Made with ❤ by malys</string>
+    <string name="about_logo_description">MG4 Swipe Launcher logo</string>
+    <string name="about_qr_description">QR code for the project repository</string>
+    <string name="about_version_unknown">unknown</string>
+    <string name="about_close">Close</string>
 </resources>

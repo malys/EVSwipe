@@ -92,10 +92,10 @@ Two build flavors, like the sibling apps:
   testers stay current without manual work. Application id
   `com.mg4.launcher.swipe.unstable`, so it installs beside a stable build.
 
-The unstable updater accepts an APK only over https from an allowlisted GitHub host,
-and only if it is signed with the same certificate as the running app — otherwise it
-deletes the file. Install is still a manual tap: the app does not hold
-`REQUEST_INSTALL_PACKAGES`.
+The unstable updater downloads to private cache, validates https and the GitHub allowlist
+at every redirect, verifies the running app's certificate, then installs automatically via
+`pm`. The cached APK is always deleted. Stable contains neither updater code nor network
+permission.
 
 ## Building
 Standard Android project (Java + Kotlin, AGP 8.6, Gradle 8.7, `minSdk 28` /

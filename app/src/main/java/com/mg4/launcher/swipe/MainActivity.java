@@ -3,10 +3,14 @@ package com.mg4.launcher.swipe;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +21,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.mg4.launcher.swipe.update.UpdateHook;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +31,7 @@ import java.util.List;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String REPOSITORY_URL = "https://github.com/malys/MG4SwipeLauncher";
     private PackageManager packageManager;
     private AppListAdapter adapter;
     private List<ApplicationInfo> allApps;
@@ -144,7 +151,29 @@ public class MainActivity extends AppCompatActivity {
             checkUpdates.setVisibility(android.view.View.GONE);
         }
 
+        findViewById(R.id.about_button).setOnClickListener(v -> showAbout());
+
         startSwipeService();
+    }
+
+    private void showAbout() {
+        String version;
+        try {
+            version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            version = getString(R.string.about_version_unknown);
+        }
+        android.view.View content = getLayoutInflater().inflate(R.layout.dialog_about, null);
+        content.<TextView>findViewById(R.id.about_version).setText(getString(R.string.about_version, version));
+        ImageView qr = content.findViewById(R.id.about_qr_code);
+        android.graphics.Bitmap bitmap = QrCode.generate(REPOSITORY_URL, 416);
+        if (bitmap != null) qr.setImageBitmap(bitmap);
+        content.findViewById(R.id.about_repository).setOnClickListener(v ->
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(REPOSITORY_URL))));
+        androidx.appcompat.app.AlertDialog dialog = new MaterialAlertDialogBuilder(this).setView(content).create();
+        content.<MaterialButton>findViewById(R.id.about_close).setOnClickListener(v -> dialog.dismiss());
+        dialog.show();
+        if (dialog.getWindow() != null) dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     private void updateHelpLabels(boolean swapped) {

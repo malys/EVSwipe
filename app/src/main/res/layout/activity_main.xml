@@ -73,6 +73,14 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/about_button"
+                style="@style/Widget.MG4.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:text="@string/about_action" />
+
+            <Button
                 android:id="@+id/check_updates_button"
                 style="@style/Widget.MG4.Button.Outlined"
                 android:layout_width="match_parent"

@@ -46,10 +46,12 @@ channel it was built into, and the stable variant does nothing. The stable APK i
 offline — the updater code is not in it. Keep it that way: nothing network-shaped in
 `src/main/`.
 
-The OTA path is `https` only, GitHub host allowlist, and the downloaded APK must be signed
-with the same certificate as the running app (`ApkSignature`) or it is deleted. No
-`REQUEST_INSTALL_PACKAGES`: the file lands in public Downloads and the user taps it.
-`OtaUpdaterTest` covers those gates and runs in CI.
+The unstable OTA path is automatic: it downloads into app-private `cacheDir`, validates
+`https` plus the GitHub allowlist at every redirect, verifies the APK against the running
+app certificate, then runs `/system/bin/pm install -r`. Success requires both exit code 0
+and `Success` in the command output; the APK is always deleted afterwards. The unstable
+manifest alone opts into `android.uid.system`; stable remains an ordinary offline app.
+`OtaUpdaterTest` covers the pure policy gates and runs in CI.
 
 ## Permission allowlist is enforced, not documented
 
