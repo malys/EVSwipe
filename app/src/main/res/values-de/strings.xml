@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_action">Über</string>
+    <string name="about_title">Über MG4 Swipe Launcher</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_attribution">Betreut von malys\nFork von Tommasov/MG4_Swipe_Launcher</string>
+    <string name="about_repository">github.com/malys/MG4SwipeLauncher</string>
+    <string name="about_made_with_love">Mit ❤ gemacht von malys</string>
+    <string name="about_logo_description">MG4 Swipe Launcher-Logo</string>
+    <string name="about_qr_description">QR-Code für das Projekt-Repository</string>
+    <string name="about_version_unknown">unbekannt</string>
+    <string name="about_close">Schließen</string>
+</resources>
