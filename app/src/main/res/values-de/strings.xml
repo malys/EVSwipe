@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">MG4 Swipe Launcher</string>
+    <string name="explanation_text">Ziel des Wischens nach oben</string>
+    <string name="app_picker_supporting_text">Wähle die App, die über den Wischbereich unten rechts geöffnet wird.</string>
+    <string name="app_picker_empty">Keine startbaren Apps gefunden. Zeige System-Apps an oder installiere einen Launcher und kehre dann hierher zurück.</string>
+    <string name="section_swipe_behavior">Wischverhalten</string>
+    <string name="show_system_apps">System-Apps anzeigen</string>
+    <string name="hide_system_apps">System-Apps ausblenden</string>
+    <string name="accessibility_service_description">Die Schaltfläche in dieser App funktioniert als virtuelle \"Zurück\"-Taste und simuliert die Aktion einer physischen Zurück-Taste auf deinem Gerät. Beim Drücken sendet sie über den Bedienungshilfen-Dienst einen Befehl, der die Zurück-Aktion nachahmt, sodass du zum vorherigen Bildschirm navigieren oder die aktuelle App schließen kannst. Das ist besonders auf Geräten ohne eigene Navigationstasten nützlich und bietet einen schnellen, bequemen Weg zurück, ohne die Navigationsleiste auf dem Bildschirm zu benötigen. Damit diese Funktion arbeitet, musst du den Bedienungshilfen-Dienst der App in den Geräteeinstellungen aktivieren.</string>
+    <string name="concedi_permesso">Berechtigung erteilen</string>
+    <string name="swap_swipe_areas">Wischbereiche tauschen</string>
+    <string name="show_loader">Öffnungsanzeige einblenden</string>
+    <string name="hide_back_button">Schwebende Zurück-Taste ausblenden</string>
+    <string name="help_swipe_back">↑ Hier wischen, um zurückzugehen</string>
+    <string name="help_swipe_open">↑ Hier wischen, um die ausgewählte App zu öffnen</string>
+    <string name="selected_indicator">Ausgewählt</string>
+    <string name="permission_setup_title">Einrichtung erforderlich</string>
+    <string name="permission_overlay_label">Über anderen Apps anzeigen</string>
+    <string name="permission_overlay_detail">Erlaubt den beiden schmalen Wischbereichen und der optionalen Zurück-Taste, über der aktuellen App zu erscheinen. Der Launcher liest keine Bildschirminhalte.</string>
+    <string name="permission_accessibility_label">Bedienungshilfen-Dienst</string>
+    <string name="permission_accessibility_detail">Erlaubt dem Launcher, die App im Vordergrund zu erkennen und Zurück auszuführen. Das Auslesen von Fensterinhalten bleibt deaktiviert.</string>
+    <string name="permission_next_step">Die Android-Einstellungen werden geöffnet. Aktiviere MG4 Swipe Launcher und kehre dann hierher zurück.</string>
+    <string name="loading_launcher">Wird geöffnet…</string>
+    <string name="package_not_found">Paket nicht gefunden</string>
+    <string name="selected_app">Ausgewählt: %1$s</string>
+    <string name="version_label">v%1$s</string>
+
+    <!-- OTA-Updater — nur Unstable-Kanal. Ein Stable-Build hat gar keinen Updater. -->
+    <string name="update_check_action">Nach Updates suchen</string>
+    <string name="update_up_to_date">Du hast die neueste Version</string>
+    <string name="update_check_failed">Update-Prüfung fehlgeschlagen</string>
+    <string name="update_downloading">Unstable %1$s wird heruntergeladen</string>
+    <string name="update_already_downloaded">Update bereits heruntergeladen — öffne es unter Downloads</string>
+    <string name="update_rejected">Update abgelehnt: falsche Signatur</string>
     <string name="about_action">Über</string>
     <string name="about_title">Über MG4 Swipe Launcher</string>
     <string name="about_version">Version %1$s</string>

@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">MG4 Swipe Launcher</string>
+    <string name="explanation_text">Destino del deslizamiento</string>
+    <string name="app_picker_supporting_text">Elige la app que se abre desde el área de deslizamiento inferior derecha.</string>
+    <string name="app_picker_empty">No se han encontrado apps ejecutables. Muestra las apps del sistema o instala un launcher y vuelve aquí.</string>
+    <string name="section_swipe_behavior">Comportamiento del deslizamiento</string>
+    <string name="show_system_apps">Mostrar apps del sistema</string>
+    <string name="hide_system_apps">Ocultar apps del sistema</string>
+    <string name="accessibility_service_description">El botón de esta app funciona como un botón virtual \"Atrás\", simulando la acción del botón físico Atrás de tu dispositivo. Al pulsarlo, usa el Servicio de Accesibilidad para enviar un comando que imita la acción de retroceso, permitiéndote volver a la pantalla anterior o cerrar la app actual. Resulta especialmente útil en dispositivos sin botones de navegación dedicados, ofreciendo una forma rápida y cómoda de retroceder sin recurrir a la barra de navegación en pantalla. Para que funcione, debes habilitar el Servicio de Accesibilidad de la app en los ajustes del dispositivo.</string>
+    <string name="concedi_permesso">Conceder permiso</string>
+    <string name="swap_swipe_areas">Intercambiar áreas de deslizamiento</string>
+    <string name="show_loader">Mostrar indicador de apertura</string>
+    <string name="hide_back_button">Ocultar el botón Atrás flotante</string>
+    <string name="help_swipe_back">↑ Desliza aquí para volver atrás</string>
+    <string name="help_swipe_open">↑ Desliza aquí para abrir la app seleccionada</string>
+    <string name="selected_indicator">Seleccionada</string>
+    <string name="permission_setup_title">Configuración necesaria</string>
+    <string name="permission_overlay_label">Mostrar sobre otras apps</string>
+    <string name="permission_overlay_detail">Permite que las dos áreas estrechas de deslizamiento y el botón Atrás opcional aparezcan sobre la app actual. El launcher no lee el contenido de la pantalla.</string>
+    <string name="permission_accessibility_label">Servicio de accesibilidad</string>
+    <string name="permission_accessibility_detail">Permite al launcher identificar la app en primer plano y ejecutar Atrás. La lectura del contenido de las ventanas sigue desactivada.</string>
+    <string name="permission_next_step">Se abrirán los ajustes de Android. Habilita MG4 Swipe Launcher y vuelve aquí.</string>
+    <string name="loading_launcher">Abriendo…</string>
+    <string name="package_not_found">Paquete no encontrado</string>
+    <string name="selected_app">Seleccionada: %1$s</string>
+    <string name="version_label">v%1$s</string>
+
+    <!-- Actualizador OTA — solo canal unstable. Una compilación stable no tiene actualizador. -->
+    <string name="update_check_action">Buscar actualizaciones</string>
+    <string name="update_up_to_date">Ya tienes la última versión</string>
+    <string name="update_check_failed">No se han podido buscar actualizaciones</string>
+    <string name="update_downloading">Descargando unstable %1$s</string>
+    <string name="update_already_downloaded">Actualización ya descargada — ábrela desde Descargas</string>
+    <string name="update_rejected">Actualización rechazada: firma incorrecta</string>
     <string name="about_action">Acerca de</string>
     <string name="about_title">Acerca de MG4 Swipe Launcher</string>
     <string name="about_version">Versión %1$s</string>
