@@ -4,7 +4,9 @@ All notable changes to **MG4 Swipe Launcher** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
-## [Unreleased] — MG4 app suite alignment
+## [Unreleased]
+
+## [2.0.0] - 2026-08-10 — MG4 app suite alignment
 
 ### ⚠️ Breaking — existing users must reinstall once
 - Application id changed from `com.tommasov.mg4swipenovalauncher` to
