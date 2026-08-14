@@ -1,13 +1,13 @@
-# AGENTS.md — MG4 Swipe Launcher
+# AGENTS.md — EVSwipe
 
-Swipe-up-from-the-bottom app launcher for the SAIC MG4 head unit. Part of **MG4Suite**
-alongside [MG4Control](../MG4Control), [MG4Tasker](../MG4Tasker),
-[MG4ABRPUploader](../MG4ABRPUploader) and [MG4 Simple Launcher](../MG4SimpleLauncher).
+Swipe-up-from-the-bottom app launcher for the SAIC MG4 head unit. Part of **EVSuite**
+alongside [EVProfile](../EVProfile), [EVTasker](../EVTasker),
+[EVABRPUploader](../EVABRPUploader) and [EVLauncher](../EVLauncher).
 
 The workspace `AGENTS.md` and normative workspace `DESIGN.md` apply; this file contains
 only launcher-specific additions.
 
-Fork of [Tommasov/MG4_Swipe_Launcher](https://github.com/Tommasov/MG4_Swipe_Launcher) —
+Fork of [Tommasov/EV_Swipe_Launcher](https://github.com/Tommasov/EV_Swipe_Launcher) —
 see [`LICENSE.md`](LICENSE.md), the licence situation is not the usual one.
 
 Commit author: malys.training@gmail.com
@@ -29,24 +29,25 @@ Widening either declaration is a security change: justify it in the PR and updat
 [`SECURITY.md`](SECURITY.md).
 
 **It never touches the vehicle.** No `android.car.*` permission, no `sharedUserId`, no IPC
-to MG4Control. Vehicle reads and writes belong in MG4Control; automation in MG4Tasker.
+to EVProfile. Vehicle reads and writes belong in EVProfile; automation in EVTasker.
 
 ## Two channels, separated by source set
 
 | | stable | unstable |
 |---|---|---|
-| Application id | `com.mg4.launcher.swipe` | `com.mg4.launcher.swipe.unstable` |
+| Application id | `com.evsuite.swipe` | `com.evsuite.swipe.unstable` |
 | Published by | `v*` tag → `release.yml` | push to `master` → `unstable.yml`, rolling `unstable` tag |
 | `INTERNET` | absent from the manifest | declared in `src/unstable/AndroidManifest.xml` |
-| `BuildConfig.OTA_ENABLED` | `false` | `true` |
-| Updater | `src/stable/.../UpdateHook.kt` — a no-op | `src/unstable/.../{UpdateHook,OtaUpdater,ApkSignature}.kt` |
+| `BuildConfig.OTA_ENABLED` | `false` | `true` (hook audit-suspended) |
+| Updater | `src/stable/.../UpdateHook.kt` — a no-op | policy code retained; `UpdateHook` inert during audit |
 
 `UpdateHook` is the flavour-aware seam: `MainActivity` calls it without knowing which
 channel it was built into, and the stable variant does nothing. The stable APK is fully
 offline — the updater code is not in it. Keep it that way: nothing network-shaped in
 `src/main/`.
 
-The unstable OTA path is automatic: it downloads into app-private `cacheDir`, validates
+The unstable OTA trigger is suspended while the suite safety and legal audit is open. Its
+retained policy downloads into app-private `cacheDir`, validates
 `https` plus the GitHub allowlist at every redirect, verifies the APK against the running
 app certificate, then runs `/system/bin/pm install -r`. Success requires both exit code 0
 and `Success` in the command output; the APK is always deleted afterwards. The unstable
@@ -77,12 +78,12 @@ picker.
 
 ## Reference patterns (shared with the suite)
 
-- **Signing**: the MG4 suite platform key, path + passwords from env vars (CI) or
+- **Signing**: the EVSuite platform key, path + passwords from env vars (CI) or
   `gradle.properties` (local); the `signingConfig` is created only if the keystore file
   exists. Never a literal secret in a build file.
 - **Security CI**: `.github/workflows/security.yml` — blocking permission-drift gate +
   gitleaks, plus informational SARIF from mobsfscan / semgrep / dependency-check.
-- **Theme**: dark Material 3 on the shared `mg4_*` colour and spacing tokens, 64 dp touch
+- **Theme**: dark Material 3 on the shared `ev_*` colour and spacing tokens, 64 dp touch
   targets. Dark is imposed, not system-following — glare on a windscreen at night.
 - **Language**: English by default (code, comments, commits, docs).
 
@@ -91,7 +92,7 @@ picker.
 `mise run build | build-unstable | test | check | permissions | run`. JDK 17, AGP 8.6,
 Gradle 8.7, `minSdk 28` / `targetSdk 34`. Emulator: `mise run emulator-setup` then
 `emulator-screen` (API 28 at panel geometry) or `emulator-car` (API 33 Automotive); AVDs
-are named `mg4swipe-*`, per-repo like the sibling projects. Overlay and accessibility are
+are named `evswipe-*`, per-repo like the sibling projects. Overlay and accessibility are
 special permissions that `adb install -g` does not grant — `mise run grant-permissions`
 sets them on a throwaway emulator, and nothing in the app should ever attempt the same at
 runtime.

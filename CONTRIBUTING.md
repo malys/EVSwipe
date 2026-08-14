@@ -1,4 +1,4 @@
-# Contributing to MG4SwipeLauncher
+# Contributing to EVSwipe
 
 Thank you for contributing! This guide ensures your work aligns with the project's safety, security, and quality standards.
 
@@ -16,7 +16,7 @@ Thank you for contributing! This guide ensures your work aligns with the project
 ## 🎯 Ground Rules
 
 1. **The accessibility service stays minimal.** `AccService` reads `TYPE_WINDOW_STATE_CHANGED` only (learns foreground package), never window content. `canRetrieveWindowContent="false"` in `res/xml/accessibility_service_config.xml` is non-negotiable.
-2. **The app holds no vehicle privileges.** No `android.car.*`, no `sharedUserId`, no IPC to MG4Control. Vehicle work → MG4Control. Automation → MG4Tasker.
+2. **The app holds no vehicle privileges.** No `android.car.*`, no `sharedUserId`, no IPC to EVProfile. Vehicle work → EVProfile. Automation → EVTasker.
 3. **The overlay must not eat touches it doesn't own.** Swipe strips are minimal and pass touches through outside the gesture area. Never block input the driver intended for the foreground app.
 4. **Stable stays offline.** No `INTERNET` permission in stable flavor. All network code in `src/unstable/` behind `BuildConfig.OTA_ENABLED`.
 5. **Be transparent about testing.** Say what you verified and what you didn't. "Passes CI, emulator OK, not tested on vehicle" is a good PR note.
@@ -165,9 +165,9 @@ fun setGestureLabel(label: String) {
 
 **Verify before PR:**
 ```bash
-adb shell dumpsys accessibility | grep -i "MG4SwipeLauncher"
+adb shell dumpsys accessibility | grep -i "EVSwipe"
 # Expected: canRetrieveWindowContent: false
-#           MG4SwipeLauncher accessibility enabled
+#           EVSwipe accessibility enabled
 ```
 
 ### Permissions
@@ -230,7 +230,7 @@ If you want Claude AI to help refine your issue or PR:
 ## 📚 Project Structure
 
 ```
-MG4SwipeLauncher/
+EVSwipe/
 ├── app/
 │   ├── src/main/          # Core overlay & gesture detection (stable)
 │   ├── src/unstable/      # OTA updater (unstable flavor only)

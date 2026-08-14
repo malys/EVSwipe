@@ -1,17 +1,17 @@
 # Changelog
 
-All notable changes to **MG4 Swipe Launcher** are documented in this file.
+All notable changes to **EVSwipe** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
 ## [Unreleased]
 
-## [2.0.0] - 2026-08-10 — MG4 app suite alignment
+## [2.0.0] - 2026-08-10 — EVSuite alignment
 
 ### ⚠️ Breaking — existing users must reinstall once
-- Application id changed from `com.tommasov.mg4swipenovalauncher` to
-  **`com.mg4.launcher.swipe`**, and the app is now signed with the **MG4 suite platform
-  key** (the same key as MG4Control and MG4Tasker). Either change alone forces a fresh
+- Application id changed from `com.tommasov.evswipenovalauncher` to
+  **`com.evsuite.swipe`**, and the app is now signed with the **EVSuite platform
+  key** (the same key as EVProfile and EVTasker). Either change alone forces a fresh
   install: uninstall the previous version, then install the new one. Settings are reset.
 
 ### Added
@@ -33,11 +33,11 @@ and this project roughly follows semantic versioning.
 - `mise.toml` pinning JDK 17, with build/test/lint/permission tasks.
 
 ### Changed
-- **UI rebuilt on the MG4 suite design system**: Material 3 dark on the shared `mg4_*`
+- **UI rebuilt on the EVSuite design system**: Material 3 dark on the shared `ev_*`
   colour and spacing tokens, with the suite's 64 dp touch target. Dark is now imposed
   rather than following the system — the screen faces the driver at night. The day/night
   PNG artwork and `values-night/` are gone.
-- Default swipe target updated to MG4 Simple Launcher's new id, `com.mg4.launcher.simple`.
+- Default swipe target updated to EVLauncher's new id, `com.evsuite.launcher`.
 
 ### Security
 - **Accessibility declaration narrowed to what the code actually uses**:
@@ -65,11 +65,11 @@ and this project roughly follows semantic versioning.
   always update in place going forward.
 
 ### Changed
-- Default swipe target is now **MG4 Simple Launcher**
-  (`com.tommasov.mg4simplelauncher`) instead of Nova Launcher. As the home launcher
+- Default swipe target is now **EVLauncher**
+  (`com.evsuite.launcher`) instead of Nova Launcher. As the home launcher
   it stays warm in memory, so the swipe re-opens it almost instantly.
-- App display name simplified to "MG4 Swipe Launcher"; repository renamed to
-  `MG4_Swipe_Launcher` (the old URL redirects automatically).
+- App display name simplified to "EVSwipe"; repository renamed to
+  `EV_Swipe_Launcher` (the old URL redirects automatically).
 - Added missing Italian translations (loader/option strings).
 
 ### Fixed

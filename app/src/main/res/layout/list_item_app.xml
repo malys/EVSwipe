@@ -8,7 +8,7 @@
     android:gravity="center_vertical"
     android:minHeight="@dimen/touch_target"
     android:orientation="horizontal"
-    android:background="@drawable/mg4_list_selector"
+    android:background="@drawable/ev_list_selector"
     android:paddingHorizontal="@dimen/spacing_md"
     android:paddingVertical="@dimen/spacing_sm">
 
@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@color/mg4_text_primary"
+        android:textColor="@color/ev_text_primary"
         android:textSize="@dimen/app_row_label" />
 
     <ImageView
@@ -34,5 +34,5 @@
         android:contentDescription="@string/selected_indicator"
         android:src="@drawable/ic_selected"
         android:visibility="gone"
-        app:tint="@color/mg4_accent" />
+        app:tint="@color/ev_accent" />
 </LinearLayout>

@@ -69,7 +69,7 @@ jobs:
         if: always()
         run: |
           {
-            echo "# MG4 Swipe Launcher security report"
+            echo "# EVSwipe security report"
             echo "_$(date -u)_"
             echo
             echo "## mobsfscan"
@@ -100,7 +100,7 @@ jobs:
         if: ${{ env.NVD_API_KEY != '' }}
         uses: dependency-check/Dependency-Check_Action@main
         with:
-          project: MG4_Swipe_Launcher
+          project: EV_Swipe_Launcher
           path: "."
           format: "SARIF"
           args: --nvdApiKey ${{ env.NVD_API_KEY }}

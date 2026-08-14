@@ -27,25 +27,26 @@ purposes**.
 - Installing it is your decision and your responsibility, including any effect on the head
   unit's stability, your warranty, your insurance, or your vehicle's roadworthiness.
 - The app **holds no vehicle privileges**: no `android.car.*` permission, no `sharedUserId`,
-  no bridge to MG4Control. It cannot read or change a vehicle setting. What it *can* do is
+  no bridge to EVProfile. It cannot read or change a vehicle setting. What it *can* do is
   start an app and consume touches at the edge of the screen the driver looks at.
 - **Compatibility is inferred, not certified.** The panel geometry and Android version
   are project compatibility targets, not a vendor specification. A firmware update can
   change the system UI or how overlays and
   accessibility services are handled.
 - The **stable channel is fully offline** — no `INTERNET` permission, no updater code in
-  the APK. The **unstable channel self-updates** from GitHub pre-releases over https, with a
-  host allowlist and a signature check, and is meant for testers, not for a car you depend
-  on.
-- Release builds are signed with the **MG4 suite platform key**. Installing them replaces
+  the APK. The unstable updater trigger is suspended during the suite safety and legal
+  audit; updates are currently manual.
+- Release builds are signed with the **EVSuite platform key**. Installing them replaces
   any earlier build signed differently — you must uninstall first, and your settings are
   reset.
 
 ## Not affiliated
 
 This project is **not affiliated with, endorsed by, or supported by** SAIC Motor, MG Motor,
-Nova Launcher, or Google. All trademarks, brand names and graphic resources belong to their
-respective owners and are used only to identify the vehicle the software targets.
+Nova Launcher, or Google. MG, MG4 and related names and logos are trademarks of their
+respective owners. They are used solely to identify compatibility with certain vehicles;
+no official origin, certification or approval is claimed. Other marks belong to their
+respective owners.
 
 ## Contributors
 

@@ -67,7 +67,7 @@ helps; a working exploit is not required.
 - **Permission drift is a blocking CI gate.** Every `uses-permission` in every manifest must
   appear in `.github/security/permission-allowlist.txt`, which carries the justification
   for each one. Adding a permission without editing that file fails the build.
-- **Signed with the MG4 suite platform key.** This app claims no privileged permission of
+- **Signed with the EVSuite platform key.** This app claims no privileged permission of
   its own; the shared key is what makes the suite one installable set, and it is what the
   OTA signature check compares an incoming APK against.
 - **The APK is not minified.** R8 is off on release, so a published APK stays verifiable

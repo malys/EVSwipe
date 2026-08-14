@@ -80,7 +80,7 @@ body:
     attributes:
       label: "Affected Versions"
       description: "Which versions are affected?"
-      placeholder: "MG4SwipeLauncher < 1.1.0 (all builds)"
+      placeholder: "EVSwipe < 1.1.0 (all builds)"
     validations:
       required: true
 

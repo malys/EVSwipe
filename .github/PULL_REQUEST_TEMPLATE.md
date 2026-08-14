@@ -1,4 +1,4 @@
-# Pull Request: MG4SwipeLauncher
+# Pull Request: EVSwipe
 
 ## 📝 What and Why
 
@@ -45,7 +45,7 @@
 
 **Permissions & Privileges:**
 - [ ] No new `uses-permission` added (or added to `.github/security/permission-allowlist.txt` with justification)
-- [ ] No vehicle privileges (no `android.car.*`, no `sharedUserId`, no MG4Control IPC)
+- [ ] No vehicle privileges (no `android.car.*`, no `sharedUserId`, no EVProfile IPC)
 - [ ] App does NOT attempt to self-grant overlay or accessibility at runtime
 - [ ] No network code in `src/main/` (OTA stays in `src/unstable/` behind `BuildConfig.OTA_ENABLED`)
 

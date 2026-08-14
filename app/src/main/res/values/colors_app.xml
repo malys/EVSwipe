@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Colours specific to MG4 Swipe Launcher. Shared tokens are in colors.xml (generated
+<!-- Colours specific to EVSwipe. Shared tokens are in colors.xml (generated
      by tools/sync-tokens.mjs - do not add a local colour there).
 
      There is no values-night/ counterpart, so Android falls back to these values in
      both themes. -->
 <resources>
     <!-- Scrim behind the swipe window. -->
-    <color name="mg4_scrim">#99000000</color>
+    <color name="ev_scrim">#99000000</color>
 </resources>

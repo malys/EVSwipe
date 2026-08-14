@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MG4 Swipe Launcher</string>
+    <string name="app_name">EVSwipe</string>
     <string name="explanation_text">Destinazione dello swipe</string>
     <string name="app_picker_supporting_text">Scegli l\'app aperta dallo swipe nell\'area in basso a destra.</string>
     <string name="app_picker_empty">Nessuna app avviabile trovata. Mostra le app di sistema o installa un launcher, poi torna qui.</string>
@@ -20,7 +20,7 @@
     <string name="permission_overlay_detail">Consente alle due strette aree di swipe e al pulsante Indietro opzionale di apparire sopra l\'app corrente. Il launcher non legge il contenuto dello schermo.</string>
     <string name="permission_accessibility_label">Servizio di accessibilità</string>
     <string name="permission_accessibility_detail">Consente al launcher di identificare l\'app in primo piano ed eseguire Indietro. La lettura del contenuto delle finestre resta disattivata.</string>
-    <string name="permission_next_step">Si apriranno le impostazioni Android. Abilita MG4 Swipe Launcher, poi torna qui.</string>
+    <string name="permission_next_step">Si apriranno le impostazioni Android. Abilita EVSwipe, poi torna qui.</string>
     <string name="loading_launcher">Apertura…</string>
     <string name="package_not_found">App non trovata</string>
     <string name="selected_app">Selezionata: %1$s</string>
@@ -34,12 +34,12 @@
     <string name="update_already_downloaded">Aggiornamento già scaricato — aprilo da Download</string>
     <string name="update_rejected">Aggiornamento rifiutato: firma non valida</string>
     <string name="about_action">Informazioni</string>
-    <string name="about_title">Informazioni su MG4 Swipe Launcher</string>
+    <string name="about_title">Informazioni su EVSwipe</string>
     <string name="about_version">Versione %1$s</string>
-    <string name="about_attribution">Mantenuto da malys\nFork di Tommasov/MG4_Swipe_Launcher</string>
-    <string name="about_repository">github.com/malys/MG4SwipeLauncher</string>
+    <string name="about_attribution">Mantenuto da malys\nFork di Tommasov/EV_Swipe_Launcher</string>
+    <string name="about_repository">github.com/malys/EVSwipe</string>
     <string name="about_made_with_love">Fatto con ❤ da malys</string>
-    <string name="about_logo_description">Logo di MG4 Swipe Launcher</string>
+    <string name="about_logo_description">Logo di EVSwipe</string>
     <string name="about_qr_description">Codice QR del repository del progetto</string>
     <string name="about_version_unknown">sconosciuta</string>
     <string name="about_close">Chiudi</string>

@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MG 4 Swipe Nova Launcher"
+rootProject.name = "EVSwipe"
 include(":app")

@@ -3,7 +3,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mg4_scrim">
+    android:background="@color/ev_scrim">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,14 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTint="@color/mg4_accent" />
+            android:indeterminateTint="@color/ev_accent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_md"
             android:text="@string/loading_launcher"
-            android:textColor="@color/mg4_text_primary"
+            android:textColor="@color/ev_text_primary"
             android:textSize="@dimen/text_body" />
     </LinearLayout>
 </FrameLayout>

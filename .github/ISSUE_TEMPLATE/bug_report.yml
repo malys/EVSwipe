@@ -61,7 +61,7 @@ body:
       label: "Steps to Reproduce"
       description: "Exact steps to reproduce the bug"
       placeholder: |
-        1. Enable MG4SwipeLauncher overlay
+        1. Enable EVSwipe overlay
         2. Configure right-edge strip
         3. Swipe from very edge of screen (last 5–10 pixels)
         4. Observe: gesture not recognized

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-label="MG4 Swipe Launcher">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-label="EVSwipe">
   <rect x="1" y="1" width="478" height="118" rx="16" fill="#12161a" stroke="#232a31" stroke-width="2"/>
   <g transform="translate(29,18)" fill="none" stroke="#f4f7fa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="10" cy="42" r="4" fill="#e0424c" stroke="none"/><path d="M23 30l12 12-12 12M40 24l18 18-18 18"/>
   </g>
-  <text x="128" y="56" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="31" font-weight="700" fill="#eef2f5">MG4<tspan fill="#e0424c"> Swipe Launcher</tspan></text>
+  <text x="128" y="56" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="31" font-weight="700" fill="#eef2f5">EV<tspan fill="#e0424c">Swipe</tspan></text>
   <text x="129" y="82" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15" fill="#9aa4ad">Swipe once · open your chosen app</text>
   <text x="129" y="101" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="12" fill="#5b6670">SAIC MG4 · AAOS 9 · lightweight</text>
 </svg>

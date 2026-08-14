@@ -1,4 +1,4 @@
-# MG4 Swipe Launcher development environment — aligned with MG4Tasker / MG4Control.
+# EVSwipe development environment — aligned with EVTasker / EVProfile.
 #
 #   mise install    installs the JDK
 #   mise run test   JVM unit tests
@@ -26,16 +26,16 @@ _.path = [
 # For this app the screen profile is the one that matters: the swipe strips live on the
 # bottom edge, so their position depends entirely on the real panel geometry.
 #
-# One AVD pair per repo, like mg4tasker-* and mg4abrp-*, so a reshaped AVD here never
-# surprises a sibling project. To exercise the default swipe target, install MG4 Simple
+# One AVD pair per repo, like evtasker-* and evabrp-*, so a reshaped AVD here never
+# surprises a sibling project. To exercise the default swipe target, install EVLauncher
 # Launcher onto this AVD too (its `mise run run`, with EMU_SCREEN_AVD pointed here).
 #
 # Geometry: project compatibility target of 1920x1080 @ 160dpi. The README
 # quotes 1920×720 — that is the usable app area left under the system UI, not the panel.
 # To model the usable area instead, set EMU_HEIGHT=720 and re-run emulator-setup.
-EMU_CAR_AVD = "mg4swipe-car"
+EMU_CAR_AVD = "evswipe-car"
 EMU_CAR_IMAGE = "system-images;android-33;android-automotive;x86_64"
-EMU_SCREEN_AVD = "mg4swipe-screen"
+EMU_SCREEN_AVD = "evswipe-screen"
 EMU_SCREEN_IMAGE = "system-images;android-28;google_apis;x86_64"
 EMU_WIDTH = "1920"
 EMU_HEIGHT = "1080"
@@ -160,7 +160,7 @@ APK=$(ls -t app/build/outputs/apk/stable/debug/*.apk | head -1)
 echo "Installing $APK"
 $ADB install -r -g "$APK"
 mise run grant-permissions
-$ADB shell am start -n "com.mg4.launcher.swipe/.PermissionActivity"
+$ADB shell am start -n "com.evsuite.swipe/.PermissionActivity"
 echo "Started."
 '''
 
@@ -173,7 +173,7 @@ description = "Grant overlay + accessibility to this app on the connected device
 run = '''
 set -e
 ADB="$ANDROID_HOME/platform-tools/adb"
-PKG="com.mg4.launcher.swipe"
+PKG="com.evsuite.swipe"
 SVC="$PKG/$PKG.AccService"
 
 # SYSTEM_ALERT_WINDOW is an appop, not a runtime permission.

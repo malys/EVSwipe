@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
-     MG4Suite settings surface: a fixed control rail preserves context while the
+     EVSuite settings surface: a fixed control rail preserves context while the
      selected launch target remains the dominant, glanceable task. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mg4_background"
+    android:background="@color/ev_background"
     android:orientation="vertical">
 
     <LinearLayout
@@ -19,7 +19,7 @@
         <LinearLayout
             android:layout_width="@dimen/settings_rail_width"
             android:layout_height="match_parent"
-            android:background="@drawable/mg4_surface_card"
+            android:background="@drawable/ev_surface_card"
             android:orientation="vertical"
             android:padding="@dimen/spacing_md">
 
@@ -27,25 +27,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
-                android:textAppearance="@style/Text.MG4.Display" />
+                android:textAppearance="@style/Text.EV.Display" />
 
             <TextView
                 android:id="@+id/version_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_xs"
-                android:textAppearance="@style/Text.MG4.Secondary" />
+                android:textAppearance="@style/Text.EV.Secondary" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_lg"
                 android:text="@string/section_swipe_behavior"
-                android:textAppearance="@style/Text.MG4.SectionHeader" />
+                android:textAppearance="@style/Text.EV.SectionHeader" />
 
             <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/switch_swap_areas"
-                style="@style/Widget.MG4.Switch"
+                style="@style/Widget.EV.Switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_sm"
@@ -53,7 +53,7 @@
 
             <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/switch_show_loader"
-                style="@style/Widget.MG4.Switch"
+                style="@style/Widget.EV.Switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_sm"
@@ -61,7 +61,7 @@
 
             <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/switch_back_button"
-                style="@style/Widget.MG4.Switch"
+                style="@style/Widget.EV.Switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_sm"
@@ -74,7 +74,7 @@
 
             <Button
                 android:id="@+id/about_button"
-                style="@style/Widget.MG4.Button.Outlined"
+                style="@style/Widget.EV.Button.Outlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/spacing_sm"
@@ -82,7 +82,7 @@
 
             <Button
                 android:id="@+id/check_updates_button"
-                style="@style/Widget.MG4.Button.Outlined"
+                style="@style/Widget.EV.Button.Outlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/update_check_action" />
@@ -112,19 +112,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/explanation_text"
-                        android:textAppearance="@style/Text.MG4.Title" />
+                        android:textAppearance="@style/Text.EV.Title" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_xs"
                         android:text="@string/app_picker_supporting_text"
-                        android:textAppearance="@style/Text.MG4.Secondary" />
+                        android:textAppearance="@style/Text.EV.Secondary" />
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/toggle_system_apps_button"
-                    style="@style/Widget.MG4.Button.Outlined"
+                    style="@style/Widget.EV.Button.Outlined"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_lg"
@@ -137,11 +137,11 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/spacing_md"
                 android:layout_weight="1"
-                android:background="@drawable/mg4_surface_card"
+                android:background="@drawable/ev_surface_card"
                 android:clipToPadding="false"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="@dimen/spacing_sm"
-                android:listSelector="@drawable/mg4_list_selector"
+                android:listSelector="@drawable/ev_list_selector"
                 android:padding="@dimen/spacing_sm" />
 
             <TextView
@@ -150,11 +150,11 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/spacing_md"
                 android:layout_weight="1"
-                android:background="@drawable/mg4_surface_card"
+                android:background="@drawable/ev_surface_card"
                 android:gravity="center"
                 android:padding="@dimen/spacing_lg"
                 android:text="@string/app_picker_empty"
-                android:textAppearance="@style/Text.MG4.Body"
+                android:textAppearance="@style/Text.EV.Body"
                 android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
@@ -166,20 +166,20 @@
 
         <TextView
             android:id="@+id/textView"
-            style="@style/Text.MG4.SwipeGuide"
+            style="@style/Text.EV.SwipeGuide"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/mg4_surface_raised"
+            android:background="@color/ev_surface_raised"
             android:text="@string/help_swipe_back" />
 
         <TextView
             android:id="@+id/textView2"
-            style="@style/Text.MG4.SwipeGuide"
+            style="@style/Text.EV.SwipeGuide"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/mg4_accent"
+            android:background="@color/ev_accent"
             android:text="@string/help_swipe_open" />
     </LinearLayout>
 </LinearLayout>

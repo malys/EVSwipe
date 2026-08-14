@@ -1,4 +1,4 @@
-# Allowed permissions for MG4 Swipe Launcher.
+# Allowed permissions for EVSwipe.
 # Any uses-permission in a manifest NOT listed here FAILS the CI.
 # Why: this app holds an accessibility service and draws over other apps — the classic
 # Android malware pairing. Every new permission widens that surface and must be reviewed

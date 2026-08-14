@@ -1,22 +1,23 @@
-# MG4 Swipe Launcher
+# EVSwipe
 
-<p align="center"><img src="docs/logo.svg" width="440" alt="MG4 Swipe Launcher"></p>
+<p align="center"><img src="docs/logo.svg" width="440" alt="EVSwipe"></p>
 
-[![Tests](https://github.com/malys/MG4_Swipe_Launcher/actions/workflows/tests.yml/badge.svg)](https://github.com/malys/MG4_Swipe_Launcher/actions/workflows/tests.yml)
-[![Security](https://github.com/malys/MG4_Swipe_Launcher/actions/workflows/security.yml/badge.svg)](https://github.com/malys/MG4_Swipe_Launcher/actions/workflows/security.yml)
-[![Unstable](https://github.com/malys/MG4_Swipe_Launcher/actions/workflows/unstable.yml/badge.svg)](https://github.com/malys/MG4_Swipe_Launcher/actions/workflows/unstable.yml)
-[![Release](https://img.shields.io/github/v/release/malys/MG4_Swipe_Launcher?include_prereleases&amp;sort=semver)](https://github.com/malys/MG4_Swipe_Launcher/releases)
+[![Tests](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/tests.yml/badge.svg)](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/tests.yml)
+[![Security](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/security.yml/badge.svg)](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/security.yml)
+[![Unstable](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/unstable.yml/badge.svg)](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/unstable.yml)
+[![Release](https://img.shields.io/github/v/release/malys/EV_Swipe_Launcher?include_prereleases&amp;sort=semver)](https://github.com/malys/EV_Swipe_Launcher/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
-MG4 Swipe Launcher is an app that enables a **swipe up** action from the bottom edge of the screen to quickly launch a user-selected app. This feature is especially useful for fast and easy access to a specific app of your choice.
+EVSwipe is an app that enables a **swipe up** action from the bottom edge of the screen to quickly launch a user-selected app. This feature is especially useful for fast and easy access to a specific app of your choice.
 
-It is part of the **MG4 app suite** (MG4Control, MG4Tasker, MG4ABRPUploader, MG4 Simple Launcher) and shares its dark Material 3 theme, its CI/CD and security gates, and its two-channel release model.
+It is part of the **EVSuite** (EVProfile, EVTasker, EVABRPUploader, EVLauncher) and shares its dark Material 3 theme, its CI/CD and security gates, and its two-channel release model.
 
 > ⚠️ **This app uses accessibility and overlay capabilities on a vehicle head unit.**
 > Do not interact with it while driving. Read [DISCLAIMER.md](DISCLAIMER.md) before
-> installing. This independent project is not affiliated with SAIC Motor or MG Motor.
+> installing. This independent project is not affiliated with or approved by SAIC Motor or
+> MG Motor. MG and MG4 are third-party marks used only to identify compatibility.
 
-> 💡 It pairs perfectly with [MG4 Simple Launcher](https://github.com/Tommasov/MG4_Simple_Launcher) — which is now the **default** swipe target. As the home launcher it stays warm in memory, so the swipe re-opens it almost instantly, for a clean, system-integrated home experience.
+> 💡 It pairs perfectly with [EVLauncher](https://github.com/Tommasov/EV_Simple_Launcher) — which is now the **default** swipe target. As the home launcher it stays warm in memory, so the swipe re-opens it almost instantly, for a clean, system-integrated home experience.
 
 ---
 
@@ -33,8 +34,8 @@ It is part of the **MG4 app suite** (MG4Control, MG4Tasker, MG4ABRPUploader, MG4
 - [Legal](#legal)
 
 ## ⚠️ Upgrading from v1.2 (or earlier) — please read
-**EN —** The app is now signed with the **MG4 suite platform key**, and its application id
-changed from `com.tommasov.mg4swipenovalauncher` to `com.mg4.launcher.swipe`. Either change
+**EN —** The app is now signed with the **EVSuite platform key**, and its application id
+changed from `com.tommasov.evswipenovalauncher` to `com.evsuite.swipe`. Either change
 alone forces a fresh install: **uninstall the previous version first**, then install the new
 one. Settings are stored per-app, so they are reset. The note below covers the earlier v1.4
 key change and still applies to anyone coming from v1.2 or earlier.
@@ -58,12 +59,12 @@ la reinstallazione.)
 
 ## Features
 - **Swipe up from the bottom edge**: Quickly launch your chosen app with a simple swipe-up gesture.
-- **Default target — MG4 Simple Launcher**: out of the box the swipe opens [MG4 Simple Launcher](https://github.com/malys/MG4_Simple_Launcher) (`com.mg4.launcher.simple`). Being the home launcher it stays warm, so it re-opens almost instantly.
-- **Any app works too**: Nova Launcher (or any installed app) can be chosen instead of the default from the MG4 Swipe main screen.
-- **Configuration**: Select the app you want to launch by opening the MG4 Swipe app.
+- **Default target — EVLauncher**: out of the box the swipe opens [EVLauncher](https://github.com/malys/EV_Simple_Launcher) (`com.evsuite.launcher`). Being the home launcher it stays warm, so it re-opens almost instantly.
+- **Any app works too**: Nova Launcher (or any installed app) can be chosen instead of the default from the EVSwipe main screen.
+- **Configuration**: Select the app you want to launch by opening the EVSwipe app.
 
 ## Configuration
-These options are configurable from the MG4 Swipe main screen:
+These options are configurable from the EVSwipe main screen:
 
 - **Two swipe areas**: the bottom edge is split into a left and a right area. By
   default the left area triggers the back action (simulated physical back button)
@@ -80,7 +81,7 @@ These options are configurable from the MG4 Swipe main screen:
   (off by default).
 - **App version**: the installed version name is shown in the top corner of the
   main screen.
-- **Check for updates**: unstable builds only — a stable build has no updater.
+- **Check for updates**: suspended during the suite safety and legal audit.
 
 ## Channels
 Two build flavors, like the sibling apps:
@@ -88,11 +89,11 @@ Two build flavors, like the sibling apps:
 - **stable** — tagged releases, **no self-update**. The updater class is not in the
   APK and the manifest declares no `INTERNET` permission, so the app is fully
   offline by construction. Installed from a USB stick.
-- **unstable** — a pre-release published on every push to `master`, with OTA so
-  testers stay current without manual work. Application id
-  `com.mg4.launcher.swipe.unstable`, so it installs beside a stable build.
+- **unstable** — a pre-release published on every push to `master`; OTA is audit-suspended,
+  so updates are manual. Application id
+  `com.evsuite.swipe.unstable`, so it installs beside a stable build.
 
-The unstable updater downloads to private cache, validates https and the GitHub allowlist
+If re-enabled after review, the unstable updater downloads to private cache, validates https and the GitHub allowlist
 at every redirect, verifies the running app's certificate, then installs automatically via
 `pm`. The cached APK is always deleted. Stable contains neither updater code nor network
 permission.
@@ -103,7 +104,7 @@ Standard Android project (Java + Kotlin, AGP 8.6, Gradle 8.7, `minSdk 28` /
 
 ```
 mise run build            # stable debug APK
-mise run build-unstable   # unstable debug APK (OTA enabled)
+mise run build-unstable   # unstable debug APK (OTA trigger audit-suspended)
 mise run test             # JVM unit tests, both channels
 mise run permissions      # permission-drift gate, same check the CI runs
 ```
@@ -118,13 +119,13 @@ Or directly:
 APKs land under `app/build/outputs/apk/<channel>/debug/`.
 
 To sign locally, in `gradle.properties` (never committed) or as environment
-variables — the same MG4 suite platform key used by MG4Control and MG4Tasker:
+variables — the same EVSuite platform key used by EVProfile and EVTasker:
 
 ```
-mg4.keystore=/path/to/platform.keystore
-mg4.keystore.password=…
-mg4.key.alias=platform
-mg4.key.password=…
+evsuite.keystore=/path/to/platform.keystore
+evsuite.keystore.password=…
+evsuite.key.alias=platform
+evsuite.key.password=…
 ```
 
 
@@ -145,8 +146,8 @@ matters here — the project targets 1920x1080 @ 160dpi
 system UI; set `EMU_HEIGHT=720` in `mise.toml` and re-run `emulator-setup` to model that
 instead.
 
-The AVDs are named per repo (`mg4simple-*`, `mg4swipe-*`), matching the `mg4tasker-*` /
-`mg4abrp-*` convention used by the sibling projects.
+The AVDs are named per repo (`mg4simple-*`, `evswipe-*`), matching the `evtasker-*` /
+`evabrp-*` convention used by the sibling projects.
 
 The overlay and accessibility permissions this app is built around are both "special":
 `adb install -g` does not grant them, and without them the app only shows its permission
