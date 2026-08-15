@@ -4,7 +4,16 @@ All notable changes to **EVSwipe** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
-## [Unreleased]
+## [3.0.0] - 2026-08-15
+
+### ⚠️ Breaking — existing users must install once more
+
+- Application id changed from `com.mg4.launcher.swipe` to **`com.evsuite.swipe`**. Android
+  treats this as a different app, so it does not update an existing install: it is added
+  next to it and starts with no configuration. Install this one, set it as the home app
+  again, check it, and only then uninstall the old app.
+- Corrects the 2.0.0 entry below, which announced this application id early: 2.0.0 in fact
+  shipped as `com.mg4.launcher.swipe`, and the rename lands here.
 
 ## [2.0.0] - 2026-08-10 — EVSuite alignment
 
