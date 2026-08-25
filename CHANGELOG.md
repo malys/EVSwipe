@@ -4,6 +4,20 @@ All notable changes to **EVSwipe** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
+## [3.0.1] - 2026-08-25
+
+### Fixed
+
+- **The overlay service starts on Android 14.** A foreground service must declare a type
+  since API 34, and this one declared none: the platform refuses such a service outright, so
+  the swipe strips and the back button never appeared. It now runs as `specialUse` — what it
+  actually is, an overlay owner and nothing else — and the lint warning that had been
+  suppressed rather than answered is gone with it.
+- **The service notification is visible again.** `POST_NOTIFICATIONS` was never declared, so
+  from Android 13 on the only sign the overlay was running was dropped silently. It is asked
+  for once the overlay and accessibility permissions are in place, and refusing it costs the
+  notification and nothing else.
+
 ## [3.0.0] - 2026-08-15
 
 ### ⚠️ Breaking — existing users must install once more

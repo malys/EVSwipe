@@ -1,18 +1,24 @@
 package com.evsuite.swipe;
 
+import android.Manifest;
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class PermissionActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_OVERLAY_PERMISSION = 1000;
     private static final int REQUEST_CODE_ACCESSIBILITY_PERMISSION = 1001;
+    private static final int REQUEST_CODE_NOTIFICATIONS = 1002;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +33,27 @@ public class PermissionActivity extends AppCompatActivity {
         } else if (!isAccessibilityServiceEnabled(this, AccService.class)) {
             requestAccessibilityPermission();
         } else {
+            requestNotificationPermission();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         }
+    }
+
+    /**
+     * Asked for once the two permissions that matter are in place, and never blocked on: the
+     * notification is the sign that the overlay service is running, not the overlay itself.
+     * It was declared and never requested, which on Android 13 and later means the service
+     * runs with no visible trace at all.
+     */
+    private void requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return;
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                == PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQUEST_CODE_NOTIFICATIONS);
     }
 
     private void requestOverlayPermission() {

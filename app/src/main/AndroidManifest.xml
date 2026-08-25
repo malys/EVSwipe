@@ -5,6 +5,13 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Since API 34 a foreground service must declare a type, and the type must be backed by
+         a permission. EVSwipe's service is none of the catalogued kinds: it holds the
+         on-screen swipe overlay and nothing else, which is what "special use" is for. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Required from API 33 to post the service notification. Without it the notification is
+         dropped silently and the only sign the overlay is running disappears. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -24,9 +31,17 @@
         </activity>
         <activity android:name=".MainActivity" />
 
+        <!-- The type is what keeps this service startable: without it, an app targeting API 34
+             crashes with MissingForegroundServiceTypeException the moment it goes foreground. -->
         <service
             android:name=".SwipeService"
-            android:exported="false" />
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Draws the swipe and back overlays over the head unit UI; the
+                    overlay exists only while this service does." />
+        </service>
 
         <service
             android:name=".AccService"

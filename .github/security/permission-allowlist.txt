@@ -15,6 +15,13 @@ android.permission.SYSTEM_ALERT_WINDOW
 # A foreground service owns the overlay for as long as the head unit is on, and starts at
 # boot so the swipe areas exist without the settings screen being opened first.
 android.permission.FOREGROUND_SERVICE
+# Since API 34 a foreground service must declare a type backed by a permission. The overlay
+# service is none of the catalogued kinds — it draws the swipe strips and nothing else — so it
+# runs as "special use". The type grants no capability of its own; it is what makes a
+# foreground service legal at all on Android 14.
+android.permission.FOREGROUND_SERVICE_SPECIAL_USE
+# Posts the service notification, which is the only visible sign the overlay is running.
+android.permission.POST_NOTIFICATIONS
 android.permission.RECEIVE_BOOT_COMPLETED
 
 # --- Network / OTA — UNSTABLE flavor only ---
