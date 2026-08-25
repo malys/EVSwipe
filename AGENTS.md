@@ -28,8 +28,11 @@ is the default answer to any change:
 Widening either declaration is a security change: justify it in the PR and update
 [`SECURITY.md`](SECURITY.md).
 
-**It never touches the vehicle.** No `android.car.*` permission, no `sharedUserId`, no IPC
-to EVProfile. Vehicle reads and writes belong in EVProfile; automation in EVTasker.
+**It never touches the vehicle.** No `android.car.*` permission, no IPC to EVProfile.
+Vehicle reads and writes belong in EVProfile; automation in EVTasker. The app does run as
+`android.uid.system` — both channels, from the main manifest, as EVTasker and EVProfile do —
+but that uid buys it nothing on the car: it exists so the privileged build is the one people
+actually drive, and so the OTA can install through `pm`.
 
 ## Two channels, separated by source set
 
@@ -50,8 +53,9 @@ The unstable OTA trigger is suspended while the suite safety and legal audit is 
 retained policy downloads into app-private `cacheDir`, validates
 `https` plus the GitHub allowlist at every redirect, verifies the APK against the running
 app certificate, then runs `/system/bin/pm install -r`. Success requires both exit code 0
-and `Success` in the command output; the APK is always deleted afterwards. The unstable
-manifest alone opts into `android.uid.system`; stable remains an ordinary offline app.
+and `Success` in the command output; the APK is always deleted afterwards. `android.uid.system` is declared in the
+main manifest and so covers both channels: what ships is what was tested, down to the uid.
+Stable is still an offline app — it has no network permission and no updater code at all.
 `OtaUpdaterTest` covers the pure policy gates and runs in CI.
 
 ## Permission allowlist is enforced, not documented

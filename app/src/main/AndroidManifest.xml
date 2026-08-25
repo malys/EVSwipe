@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Both channels are the same application: platform-signed and running as the system uid,
+     exactly as EVTasker and EVProfile do. The declaration used to live in the unstable
+     manifest alone, so the privileged build was the one nobody drove and the one people
+     installed was an ordinary app — the two differed in the property that decides what the
+     app may do, which is the last property that should differ between what is tested and
+     what ships. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

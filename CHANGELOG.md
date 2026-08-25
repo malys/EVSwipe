@@ -4,6 +4,24 @@ All notable changes to **EVSwipe** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
+## [3.1.0] - 2026-08-25
+
+### ⚠️ Breaking — existing users must install once more
+
+- Both channels now run as the system uid (`android.uid.system`), declared in the main
+  manifest as EVTasker and EVProfile declare it. Android refuses to update an install across
+  a uid change, so this version does not replace an existing stable install: uninstall the
+  old one, install this one, grant the overlay and accessibility permissions again, and set
+  the swipe zones again. Settings do not carry over.
+
+### Changed
+
+- The privileged build is no longer the one nobody drives. `android.uid.system` used to be
+  declared in the unstable manifest alone: the channel people install was an ordinary app and
+  the channel that gets tested was a system one, differing in the single property that decides
+  what the app is allowed to do. Stable is still offline by construction — no network
+  permission, no updater code — and the app still claims no vehicle permission of any kind.
+
 ## [3.0.1] - 2026-08-25
 
 ### Fixed

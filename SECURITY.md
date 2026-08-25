@@ -67,8 +67,10 @@ helps; a working exploit is not required.
 - **Permission drift is a blocking CI gate.** Every `uses-permission` in every manifest must
   appear in `.github/security/permission-allowlist.txt`, which carries the justification
   for each one. Adding a permission without editing that file fails the build.
-- **Signed with the EVSuite platform key.** This app claims no privileged permission of
-  its own; the shared key is what makes the suite one installable set, and it is what the
-  OTA signature check compares an incoming APK against.
+- **Signed with the EVSuite platform key, and running as `android.uid.system`.** The app
+  claims no `android.car.*` permission and reaches no vehicle interface; the uid is what lets
+  the unstable channel install an update through `pm`, and it is declared for both channels so
+  the build people drive is the one that was tested. The shared key is what makes the suite one
+  installable set, and it is what the OTA signature check compares an incoming APK against.
 - **The APK is not minified.** R8 is off on release, so a published APK stays verifiable
   line-by-line against this source — which matters more here than for most apps.
