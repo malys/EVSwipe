@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Styles specific to EVSwipe. The shared ones are generated into styles_ev.xml by
+     tools/sync-tokens.mjs and any edit there is lost on the next sync — app-specific
+     styles belong here, alongside colors_app.xml and dimens_app.xml. -->
+<resources>
+    <!-- The onboarding guide sits on the accent strip, so it takes the on-accent colour
+         rather than the usual body colour, and is centred because it is read at a glance. -->
+    <style name="Text.EV.SwipeGuide" parent="Text.EV.Body">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/spacing_lg</item>
+        <item name="android:paddingEnd">@dimen/spacing_lg</item>
+        <item name="android:textColor">@color/ev_on_accent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
