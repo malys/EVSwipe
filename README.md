@@ -46,7 +46,7 @@ Discover the rest of the suite:
 ## Contents
 
 - [Part of EVSuite](#part-of-evsuite)
-- [⚠️ Upgrading from v1.2 (or earlier) — please read](#upgrading-from-v12-or-earlier-please-read)
+- [Upgrading from v1.2 (or earlier) — please read](#upgrading-from-v12-or-earlier-please-read)
 - [Features](#features)
 - [Configuration](#configuration)
 - [Building](#building)
@@ -55,7 +55,7 @@ Discover the rest of the suite:
 - [Contributing](#contributing)
 - [Legal](#legal)
 
-## ⚠️ Upgrading from v1.2 (or earlier) — please read
+## Upgrading from v1.2 (or earlier) — please read
 The app is now signed with the **EVSuite platform key**, and its application id
 changed from `com.tommasov.evswipenovalauncher` to `com.evsuite.swipe`. Either change
 alone forces a fresh install: **uninstall the previous version first**, then install the new
