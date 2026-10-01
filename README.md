@@ -45,7 +45,8 @@ Discover the rest of the suite:
 
 ## Contents
 
-- [⚠️ Upgrading from v1.2 (or earlier) — please read](#️-upgrading-from-v12-or-earlier--please-read)
+- [Part of EVSuite](#part-of-evsuite)
+- [⚠️ Upgrading from v1.2 (or earlier) — please read](#upgrading-from-v12-or-earlier-please-read)
 - [Features](#features)
 - [Configuration](#configuration)
 - [Building](#building)
