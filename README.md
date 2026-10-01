@@ -7,7 +7,7 @@
 [![Unstable](https://github.com/malys/EVSwipe/actions/workflows/unstable.yml/badge.svg)](https://github.com/malys/EVSwipe/actions/workflows/unstable.yml)
 [![Release](https://img.shields.io/github/v/release/malys/EVSwipe?include_prereleases&sort=semver)](https://github.com/malys/EVSwipe/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Part of EVSuite](https://img.shields.io/badge/part%20of-EVSuite-2f81f7)](https://malys.github.io/EVSuite_site/)
+[![Part of EVSuite](https://img.shields.io/badge/part%20of-EVSuite-2f81f7)](https://malys.github.io/EVSuite/)
 
 > ⚠️ **This app draws an overlay and uses an accessibility service on a vehicle head unit; do not use it while driving.** Read
 > [DISCLAIMER.md](DISCLAIMER.md) before installing. It has no access to the vehicle itself.
@@ -27,10 +27,10 @@ two-channel release model.
 
 ## Part of EVSuite
 
-EVSwipe is one app of [**EVSuite**](https://malys.github.io/EVSuite_site/), a family of independent,
+EVSwipe is one app of [**EVSuite**](https://malys.github.io/EVSuite/), a family of independent,
 offline-first apps for the MG4 head unit (Android Automotive OS 9). Each app installs on its
 own — pick only what you need. User guides and install instructions:
-<https://malys.github.io/EVSuite_site/>.
+<https://malys.github.io/EVSuite/>.
 
 Discover the rest of the suite:
 
