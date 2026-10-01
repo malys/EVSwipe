@@ -2,31 +2,52 @@
 
 <p align="center"><img src="docs/logo.svg" width="440" alt="EVSwipe"></p>
 
-[![Tests](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/tests.yml/badge.svg)](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/tests.yml)
-[![Security](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/security.yml/badge.svg)](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/security.yml)
-[![Unstable](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/unstable.yml/badge.svg)](https://github.com/malys/EV_Swipe_Launcher/actions/workflows/unstable.yml)
-[![Release](https://img.shields.io/github/v/release/malys/EV_Swipe_Launcher?include_prereleases&amp;sort=semver)](https://github.com/malys/EV_Swipe_Launcher/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+[![Tests](https://github.com/malys/EVSwipe/actions/workflows/tests.yml/badge.svg)](https://github.com/malys/EVSwipe/actions/workflows/tests.yml)
+[![Security](https://github.com/malys/EVSwipe/actions/workflows/security.yml/badge.svg)](https://github.com/malys/EVSwipe/actions/workflows/security.yml)
+[![Unstable](https://github.com/malys/EVSwipe/actions/workflows/unstable.yml/badge.svg)](https://github.com/malys/EVSwipe/actions/workflows/unstable.yml)
+[![Release](https://img.shields.io/github/v/release/malys/EVSwipe?include_prereleases&sort=semver)](https://github.com/malys/EVSwipe/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Part of EVSuite](https://img.shields.io/badge/part%20of-EVSuite-2f81f7)](https://malys.github.io/EVSuite/)
 
-EVSwipe is an app that enables a **swipe up** action from the bottom edge of the screen to quickly launch a user-selected app. This feature is especially useful for fast and easy access to a specific app of your choice.
+> ⚠️ **This app draws an overlay and uses an accessibility service on a vehicle head unit; do not use it while driving.** Read
+> [DISCLAIMER.md](DISCLAIMER.md) before installing. It has no access to the vehicle itself.
+> MG and MG4 are third-party marks used only to identify compatibility; this independent
+> project is not affiliated with or approved by SAIC Motor or MG Motor.
 
-It is part of the **EVSuite** (EVProfile, EVTasker, EVABRPUploader, EVLauncher) and shares its dark Material 3 theme, its CI/CD and security gates, and its two-channel release model.
+Swipe up from the bottom edge of the screen to quickly launch a user-selected app. Handy
+for fast, easy access to one specific app of your choice.
 
-> ⚠️ **This app uses accessibility and overlay capabilities on a vehicle head unit.**
-> Do not interact with it while driving. Read [DISCLAIMER.md](DISCLAIMER.md) before
-> installing. This independent project is not affiliated with or approved by SAIC Motor or
-> MG Motor. MG and MG4 are third-party marks used only to identify compatibility.
+> 💡 It pairs perfectly with [EVLauncher](https://github.com/malys/EVLauncher), which is
+> now the **default** swipe target. As the home launcher it stays warm in memory, so the
+> swipe re-opens it almost instantly, for a clean, system-integrated home experience.
 
-> 💡 It pairs perfectly with [EVLauncher](https://github.com/Tommasov/EV_Simple_Launcher) — which is now the **default** swipe target. As the home launcher it stays warm in memory, so the swipe re-opens it almost instantly, for a clean, system-integrated home experience.
+EVSwipe is **independent**: it needs no other EVSuite app, and it does not read or write the
+vehicle. It shares the suite's dark Material 3 theme, its CI/CD and security gates, and its
+two-channel release model.
+
+## Part of EVSuite
+
+EVSwipe is one app of [**EVSuite**](https://malys.github.io/EVSuite/), a family of independent,
+offline-first apps for the MG4 head unit (Android Automotive OS 9). Each app installs on its
+own — pick only what you need. User guides and install instructions:
+<https://malys.github.io/EVSuite/>.
+
+Discover the rest of the suite:
+
+[![EVProfile](https://img.shields.io/badge/EVProfile-settings%20%26%20drive%20profiles-2f81f7?logo=github)](https://github.com/malys/EVProfile)
+[![EVTasker](https://img.shields.io/badge/EVTasker-rule%20automation-2f81f7?logo=github)](https://github.com/malys/EVTasker)
+[![EVABRPUploader](https://img.shields.io/badge/EVABRPUploader-ABRP%20telemetry-2f81f7?logo=github)](https://github.com/malys/EVABRPUploader)
+[![EVChargePilot](https://img.shields.io/badge/EVChargePilot-energy%20%26%20trips-2f81f7?logo=github)](https://github.com/malys/EVChargePilot)
+[![EVLauncher](https://img.shields.io/badge/EVLauncher-home%20launcher-2f81f7?logo=github)](https://github.com/malys/EVLauncher)
+[![EVHardware](https://img.shields.io/badge/EVHardware-shared%20vehicle%20library-2f81f7?logo=github)](https://github.com/malys/EVHardware)
 
 ---
 
 ## Contents
 
-- [⚠️ Upgrading from v1.2 (or earlier) — please read](#upgrading-from-v12-or-earlier-please-read)
+- [⚠️ Upgrading from v1.2 (or earlier) — please read](#️-upgrading-from-v12-or-earlier--please-read)
 - [Features](#features)
 - [Configuration](#configuration)
-- [Channels](#channels)
 - [Building](#building)
 - [Project documents](#project-documents)
 - [Security](#security)
@@ -34,7 +55,7 @@ It is part of the **EVSuite** (EVProfile, EVTasker, EVABRPUploader, EVLauncher) 
 - [Legal](#legal)
 
 ## ⚠️ Upgrading from v1.2 (or earlier) — please read
-**EN —** The app is now signed with the **EVSuite platform key**, and its application id
+The app is now signed with the **EVSuite platform key**, and its application id
 changed from `com.tommasov.evswipenovalauncher` to `com.evsuite.swipe`. Either change
 alone forces a fresh install: **uninstall the previous version first**, then install the new
 one. Settings are stored per-app, so they are reset. The note below covers the earlier v1.4
@@ -48,18 +69,9 @@ to migrate to the new signed builds — every future update will install normall
 with no uninstall. (Your settings are stored per-app, so they are reset on
 reinstall.)
 
-**IT —** A partire dalla **v1.4** l'app è firmata con una nuova chiave di firma
-stabile. Android **non** consente di installare un aggiornamento sopra un'app
-firmata con una chiave diversa, quindi non puoi aggiornare sopra una versione
-precedente: devi prima **disinstallare la versione vecchia** e poi installare la
-v1.4. È un passaggio **una tantum**, necessario solo per migrare alle nuove build
-firmate — tutti gli aggiornamenti futuri si installeranno normalmente, senza
-disinstallare. (Le impostazioni sono salvate per app, quindi verranno azzerate con
-la reinstallazione.)
-
 ## Features
 - **Swipe up from the bottom edge**: Quickly launch your chosen app with a simple swipe-up gesture.
-- **Default target — EVLauncher**: out of the box the swipe opens [EVLauncher](https://github.com/malys/EV_Simple_Launcher) (`com.evsuite.launcher`). Being the home launcher it stays warm, so it re-opens almost instantly.
+- **Default target — EVLauncher**: out of the box the swipe opens [EVLauncher](https://github.com/malys/EVLauncher) (`com.evsuite.launcher`). Being the home launcher it stays warm, so it re-opens almost instantly.
 - **Any app works too**: Nova Launcher (or any installed app) can be chosen instead of the default from the EVSwipe main screen.
 - **Configuration**: Select the app you want to launch by opening the EVSwipe app.
 
@@ -82,21 +94,6 @@ These options are configurable from the EVSwipe main screen:
 - **App version**: the installed version name is shown in the top corner of the
   main screen.
 - **Check for updates**: suspended during the suite safety and legal audit.
-
-## Channels
-Two build flavors, like the sibling apps:
-
-- **stable** — tagged releases, **no self-update**. The updater class is not in the
-  APK and the manifest declares no `INTERNET` permission, so the app is fully
-  offline by construction. Installed from a USB stick.
-- **unstable** — a pre-release published on every push to `master`; OTA is audit-suspended,
-  so updates are manual. Application id
-  `com.evsuite.swipe.unstable`, so it installs beside a stable build.
-
-If re-enabled after review, the unstable updater downloads to private cache, validates https and the GitHub allowlist
-at every redirect, verifies the running app's certificate, then installs automatically via
-`pm`. The cached APK is always deleted. Stable contains neither updater code nor network
-permission.
 
 ## Building
 Standard Android project (Java + Kotlin, AGP 8.6, Gradle 8.7, `minSdk 28` /
@@ -128,6 +125,20 @@ evsuite.key.alias=platform
 evsuite.key.password=…
 ```
 
+### Channels
+Two build flavors, like the sibling apps:
+
+- **stable** — tagged releases, **no self-update**. The updater class is not in the
+  APK and the manifest declares no `INTERNET` permission, so the app is fully
+  offline by construction. Installed from a USB stick.
+- **unstable** — a pre-release published on every push to `master`; OTA is audit-suspended,
+  so updates are manual. Application id
+  `com.evsuite.swipe.unstable`, so it installs beside a stable build.
+
+If re-enabled after review, the unstable updater downloads to private cache, validates https and the GitHub allowlist
+at every redirect, verifies the running app's certificate, then installs automatically via
+`pm`. The cached APK is always deleted. Stable contains neither updater code nor network
+permission.
 
 ### Emulator
 
@@ -142,7 +153,7 @@ mise run emulator-stop
 Neither profile is faithful on both axes: the vehicle runs AAOS 9 (API 28), but Google
 publishes no Automotive system image below API 33. The screen profile is the one that
 matters here — the project targets 1920x1080 @ 160dpi
-(`SWI68-29958-1300R69`). The `1920×720` quoted above is the usable app area left under the
+(`SWI68-29958-1300R69`). The `1920×720` figure is the usable app area left under the
 system UI; set `EMU_HEIGHT=720` in `mise.toml` and re-run `emulator-setup` to model that
 instead.
 
@@ -169,14 +180,15 @@ Every `uses-permission` must be listed with a justification in
 `.github/security/permission-allowlist.txt`, or the build fails.
 
 ## Project documents
-- [SECURITY.md](SECURITY.md) — threat model, the accessibility/overlay posture, how to
-  report a vulnerability privately
-- [DISCLAIMER.md](DISCLAIMER.md) — no warranty, no liability, and what running this on a
-  vehicle head unit means concretely
-- [CONTRIBUTING.md](CONTRIBUTING.md) — ground rules and the checks to run before a PR
-- [LICENSE.md](LICENSE.md) — MIT; this is a fork of an upstream project that publishes no
-  licence of its own, read it before reusing anything
-- [AGENTS.md](AGENTS.md) — architecture notes for contributors and coding agents
+| Document | What it covers |
+|---|---|
+| [SECURITY.md](SECURITY.md) | Threat model, the accessibility/overlay posture, how to report a vulnerability privately |
+| [DISCLAIMER.md](DISCLAIMER.md) | No warranty, no liability, and what running this on a vehicle head unit means concretely |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Ground rules and the checks to run before a PR |
+| [DESIGN.md](DESIGN.md) | The EVSuite design system |
+| [CHANGELOG.md](CHANGELOG.md) | Release history |
+| [LICENSE.md](LICENSE.md) | MIT, and where the forked code comes from |
+| [AGENTS.md](AGENTS.md) | Architecture notes for contributors and coding agents |
 
 ## Security
 This app holds an accessibility service and draws over other apps, so its
@@ -193,20 +205,7 @@ what would break without them. Anything touching the interface follows
 [DESIGN.md](DESIGN.md).
 
 ## Legal
-
-The full text lives in [DISCLAIMER.md](DISCLAIMER.md). In short:
-
-This project is provided **for study and educational purposes only**. It is an
-experimental, non-commercial project and is not affiliated with, endorsed by, or
-supported by SAIC, MG, Nova Launcher, or any vehicle manufacturer.
-
-The software is provided "as is", without warranty of any kind, express or
-implied. The author accepts **no liability** for any direct, indirect, incidental,
-or consequential damage of any kind — including but not limited to damage to the
-vehicle, its infotainment system, software, or data, loss of functionality, or
-safety-related consequences — arising from the installation or use of this app.
-You use it entirely **at your own risk**. Do not interact with the app while
-driving.
-
-All graphic resources, trademarks, and brand names belong to their respective
-owners and are used here for study purposes only.
+Released under the MIT License. EVSwipe is a fork of
+[Tommasov/EV_Swipe_Launcher](https://github.com/Tommasov/EV_Swipe_Launcher), which publishes no licence of
+its own; see [LICENSE](LICENSE) and [LICENSE.md](LICENSE.md). Provided as is, without
+warranty or liability — see [DISCLAIMER.md](DISCLAIMER.md).
