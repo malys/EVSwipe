@@ -11,8 +11,8 @@ android {
         applicationId = "com.evsuite.swipe"
         minSdk = 28
         targetSdk = 34
-        versionCode = 8
-        versionName = "3.1.0"
+        versionCode = 9
+        versionName = "3.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -4,6 +4,13 @@ All notable changes to **EVSwipe** are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project roughly follows semantic versioning.
 
+## [3.1.1] - 2026-11-01
+
+### Changed
+
+- **Smaller APK.** The release build is shrunk by R8: 2.3 MB instead of 10.3 MB, fewer
+  classes for the head unit to load at boot.
+
 ## [3.1.0] - 2026-08-25
 
 ### ⚠️ Breaking — existing users must install once more
