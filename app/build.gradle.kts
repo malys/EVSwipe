@@ -65,10 +65,9 @@ android {
 
     buildTypes {
         release {
-            // R8 off: an unminified APK stays verifiable line-by-line against this source.
-            // That matters more than a few hundred kB for an app that holds an accessibility
-            // service and an overlay.
-            isMinifyEnabled = false
+            // R8 on: fewer classes to load when the head unit boots. The app uses no reflection.
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
